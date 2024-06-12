@@ -1,0 +1,395 @@
+¿Qué es un socket?
+a) Un punto final de comunicación para el intercambio de datos bidireccional entre cliente y servidor.
+b) Una biblioteca para gestionar conexiones de red.
+c) Un tipo de protocolo de red.
+a
+¿Qué tipo de socket se usa para una comunicación orientada a conexión, fiable y bidireccional?
+a) SOCK_DGRAM
+b) SOCK_STREAM 
+c) SOCK_RAW
+b
+¿Qué función se utiliza para asociar una dirección IP y un puerto a un socket?
+a) connect()
+b) bind() 
+c) listen()
+b
+¿Cuál es la estructura que se usa para definir una dirección de socket IPv4?
+a) struct sockaddr_un
+b) struct sockaddr_in  
+c) struct sockaddr_in6
+b
+¿Qué llamada al sistema se usa para aceptar una conexión entrante en un socket servidor?
+a) accept()  
+b) connect()
+c) bind()
+a
+¿Qué tipo de socket permite el envío de mensajes sin conexión y no fiables?
+a) SOCK_STREAM
+c) SOCK_RAW
+b) SOCK_DGRAM  
+c
+¿Qué familia de protocolos se utiliza para la comunicación entre procesos en el mismo sistema?
+a) AF_INET
+b) AF_INET6
+c) AF_UNIX  
+c
+¿Cuál es la función que traduce nombres a direcciones IP y números de puerto? \
+a) getaddrinfo() 
+b) getnameinfo()
+c) inet_pton()
+a
+¿Qué constante se usa para inicializar una dirección IPv6 para cualquier dirección local?
+a) INADDR_ANY
+b) IN6ADDR_ANY_INIT  
+c) INADDR_LOOPBACK
+b
+¿Qué opción de socket activa el mecanismo de keepalive en sockets de tipo SOCK_STREAM?
+a) SO_KEEPALIVE  
+b) SO_BROADCAST
+c) SO_REUSEADDR
+a
+¿Qué familia de protocolos se utiliza para la comunicación IPv4?
+a) AF_INET  
+b) AF_UNIX
+c) AF_INET6
+a
+¿Qué tipo de socket proporciona acceso directo a los protocolos de red o transporte, evitando el procesamiento normal de TCP/IP?
+a) SOCK_STREAM
+b) SOCK_DGRAM
+c) SOCK_RAW 
+c
+¿Qué constante se usa para inicializar una dirección IPv4 para cualquier dirección local?
+a) INADDR_ANY  
+b) IN6ADDR_ANY_INIT
+c) INADDR_LOOPBACK
+a
+¿Qué función se utiliza para enviar datos a un socket?
+a) recv()
+b) send() 
+c) bind()
+b
+¿Qué opción de socket permite a los sockets SOCK_DGRAM usar direcciones de broadcast?
+a) SO_KEEPALIVE
+b) SO_BROADCAST  
+c) SO_REUSEADDR
+b
+¿Qué función se utiliza para convertir direcciones de texto a formato binario? \
+a) inet_ntop
+b) inet_pton  
+c) getaddrinfo
+b
+¿Qué llamada al sistema se usa para recibir datos de un socket?
+a) recv()  
+b) send()
+c) listen()
+a 
+¿Qué opción de socket se utiliza para desactivar el algoritmo de Nagle en sockets TCP? \
+a) TCP_NODELAY  
+b) TCP_QUICKACK
+c) SO_KEEPALIVE
+a
+¿Cuál es el propósito de la función listen() en un socket servidor?
+a) Establecer una conexión con un cliente
+b) Asociar una dirección IP y puerto a un socket
+c) Poner el socket en modo pasivo para aceptar conexiones entrantes 
+c
+¿Qué estructura se usa para definir una dirección de socket IPv6?
+a) struct sockaddr_in
+b) struct sockaddr_un
+c) struct sockaddr_in6  
+c
+¿Qué llamada al sistema se utiliza para asociar un socket con una dirección y puerto específicos?
+a) connect()
+b) bind()  
+c) listen()
+b
+¿Qué función es utilizada para crear un nuevo socket?
+a) socket()  
+b) connect()
+c) bind()
+a
+¿Qué constante representa una dirección de loopback en IPv4?
+a) INADDR_ANY
+b) INADDR_LOOPBACK  
+c) INADDR_BROADCAST
+b
+¿Cuál es la función de la llamada listen() en un socket?
+a) Permitir que el socket escuche conexiones entrantes  
+b) Aceptar una conexión entrante
+c) Enviar datos a través del socket
+a
+¿Qué función se usa para aceptar una conexión entrante en un socket de servidor?
+a) recv()
+b) accept()  
+c) connect()
+b
+¿Qué opción de socket permite la reutilización de direcciones locales?
+a) SO_REUSEADDR  
+b) SO_BROADCAST
+c) SO_KEEPALIVE
+a
+¿Qué función se utiliza para enviar datos desde un socket sin conexión?
+a) sendto()  
+b) send()
+c) recvfrom()
+a
+¿Cuál es el objetivo del algoritmo de Nagle, que se puede desactivar con la opción TCP_NODELAY?
+a) Mejorar la fiabilidad de la conexión
+b) Reducir el uso de ancho de banda
+c) Reducir el número de pequeños paquetes enviados por la red 
+c
+¿Qué función permite recibir datos desde un socket, y puede especificar la dirección del remitente?
+a) recv()
+b) send()
+c) recvfrom()  
+c
+¿Qué llamada al sistema se utiliza para conectar un socket cliente a un servidor?
+a) connect()  
+b) accept()
+c) bind()
+a
+¿Qué función se utiliza para cerrar un socket?
+a) close()  
+b) shutdown()
+c) terminate()
+a
+¿Cuál es el propósito de la función shutdown() en un socket?
+a) Cerrar el socket completamente
+b) Detener la transmisión de datos en una dirección específica  
+c) Reiniciar el socket
+b
+¿Qué función convierte direcciones IP de formato binario a formato de texto?
+a) inet_pton
+b) inet_ntop  
+c) gethostbyname
+b
+¿Qué función se usa para recibir datos en un socket conectado?
+a) recv()  
+b) send()
+c) accept()
+a
+¿Qué estructura se utiliza para almacenar direcciones de socket para IPv4 en C?
+a) struct sockaddr_un
+b) struct sockaddr_in  
+c) struct sockaddr_in6
+b
+¿Qué función bloquea hasta que se establece una conexión en un socket en modo escucha?
+a) listen()
+b) connect()
+c) accept()  
+c
+¿Qué familia de protocolos se utiliza para la comunicación IPv6?
+a) AF_INET
+b) AF_INET6  
+c) AF_UNIX
+b
+¿Qué opción de socket se debe configurar para permitir que un socket envíe y reciba paquetes de difusión (broadcast)?
+a) SO_REUSEADDR
+b) SO_KEEPALIVE
+c) SO_BROADCAST  
+c
+¿Qué constante se usa para representar cualquier dirección IP en el contexto de sockets?
+a) INADDR_ANY  
+b) INADDR_LOOPBACK
+c) INADDR_BROADCAST
+a
+¿Qué función se utiliza para configurar opciones en un socket?
+a) setsockopt()  
+b) getsockopt()
+c) ioctlsocket()
+a
+¿Qué opción de socket se debe usar para obtener el valor de las opciones del socket?
+a) setsockopt()
+b) getsockopt()  
+c) optval()
+b
+¿Qué familia de protocolos se utiliza para la comunicación de dominio de Unix?
+a) AF_INET
+b) AF_INET6
+c) AF_UNIX  
+c
+¿Qué función se utiliza para enviar datos a través de un socket conectado?
+a) send()  
+b) recv()
+c) listen()
+a
+¿Qué llamada al sistema se utiliza para recibir datos desde un socket conectado, especificando el tamaño del buffer?
+a) send()
+b) recv()  
+c) bind()
+b
+¿Qué opción de socket se utiliza para habilitar la reutilización de direcciones locales?
+a) SO_REUSEADDR 
+b) SO_KEEPALIVE
+c) SO_BROADCAST
+a
+¿Qué estructura se utiliza para definir una dirección de socket para IPv6 en C?
+a) struct sockaddr_in
+b) struct sockaddr_un
+c) struct sockaddr_in6  
+c
+¿Qué llamada al sistema se utiliza para detener la recepción de datos en un socket? (?)
+a) close()
+b) shutdown()  
+c) terminate()
+b
+¿Qué función se utiliza para convertir direcciones de texto a formato binario para IPv4 y IPv6?
+a) inet_ntop
+b) inet_pton  
+c) getaddrinfo
+
+¿Qué opción de socket se utiliza para activar el mecanismo de keepalive en sockets TCP?
+a) SO_KEEPALIVE 
+b) SO_BROADCAST
+c) SO_REUSEADDR
+a
+¿Cuál es el protocolo que debe usarse para permitir la comunicación entre procesos en un mismo sistema?
+a) AF_INET
+b) AF_INET6
+c) AF_UNIX  
+c
+¿Qué función se usa para configurar el tamaño del buffer de envío en un socket?
+a) getsockopt()
+b) setsockopt() 
+c) optval()
+b
+¿Qué opción de socket permite la reutilización de direcciones locales en estado TIME_WAIT?
+a) SO_KEEPALIVE
+b) SO_BROADCAST
+c) SO_REUSEADDR  
+c
+¿Qué opción de socket se utiliza para desactivar el algoritmo de Nagle en TCP?
+a) TCP_NODELAY  
+b) TCP_QUICKACK
+c) TCP_FASTOPEN
+a
+¿Cuál es el propósito de la función listen() en programación de sockets?
+a) Esperar a que lleguen datos al socket
+b) Poner el socket en modo de escucha para aceptar conexiones 
+c) Enviar datos a través del socket
+b
+¿Qué función se utiliza para aceptar una conexión establecida en un socket servidor?
+a) connect()
+b) bind()
+c) accept() 
+c
+¿Cuál es la función correcta para recibir datos desde un socket?
+a) send()
+b) recv() 
+c) listen()
+b
+¿Qué valor de IPPROTO se utiliza para configurar opciones en un socket TCP?
+a) IPPROTO_UDP
+b) IPPROTO_TCP  
+c) IPPROTO_IP
+b
+¿Qué función se utiliza para convertir direcciones en formato binario a texto en C?
+a) inet_ntop 
+b) inet_pton
+c) getaddrinfo
+a
+¿Cuál es la estructura utilizada para definir una dirección de socket para IPv4 en C?
+a) struct sockaddr_in  
+b) struct sockaddr_un
+c) struct sockaddr_in6
+a
+¿Qué función se utiliza para enviar datos a través de un socket conectado?
+a) send()  
+b) recv()
+c) bind()
+a
+¿Qué opción de socket se utiliza para habilitar la transmisión de datos de difusión en un socket UDP?
+a) SO_KEEPALIVE
+b) SO_BROADCAST  
+c) SO_REUSEADDR
+b
+¿Qué familia de protocolos se utiliza para la comunicación sobre IPv6?
+a) AF_INET
+b) AF_INET6  
+c) AF_UNIX
+b
+¿Qué estructura de C se utiliza para almacenar una dirección IP de 32 bits?
+a) struct in6_addr
+b) struct sockaddr_in
+c) struct in_addr  
+c
+¿Cuál es la función que se utiliza para establecer una conexión en un socket cliente?
+a) connect()  
+b) bind()
+c) accept()
+a
+¿Qué opción de socket se utiliza para establecer el tiempo máximo de espera para recibir datos en un socket?
+a) SO_SNDTIMEO
+b) SO_RCVTIMEO  
+c) SO_KEEPALIVE
+b
+¿Qué llamada al sistema se utiliza para cerrar un socket de manera segura?
+a) close()  
+b) shutdown()
+c) terminate()
+a
+¿Cuál es la estructura de C que representa una dirección IPv6?
+a) struct sockaddr_in
+b) struct sockaddr_un
+c) struct sockaddr_in6  
+c
+¿Qué función se utiliza para inicializar una dirección de socket en la familia AF_INET?
+a) inet_pton
+b) inet_ntoa
+c) inet_addr  
+c
+¿Qué constante se usa para representar cualquier dirección IP en el contexto de sockets IPv6?
+a) INADDR_ANY
+b) IN6ADDR_ANY_INIT  
+c) INADDR_LOOPBACK
+b
+¿Cuál es la función de la llamada getsockname()?
+a) Obtener la dirección y el puerto locales de un socket  
+b) Obtener la dirección y el puerto del par remoto
+c) Configurar opciones de socket
+a
+¿Qué función convierte un nombre de host en una dirección IP?
+a) gethostbyname  
+b) inet_pton
+c) inet_ntoa
+a
+¿Qué opción de socket se utiliza para configurar el tiempo máximo de espera para enviar datos?
+a) SO_SNDTIMEO  
+b) SO_RCVTIMEO
+c) SO_LINGER
+a
+¿Qué llamada al sistema se utiliza para enviar datos a través de un socket sin establecer una conexión previa?
+a) sendto()  
+b) send()
+c) recvfrom()
+a
+¿Qué familia de protocolos se utiliza para la comunicación entre procesos en diferentes sistemas a través de Internet?
+a) AF_INET 
+b) AF_UNIX
+c) AF_INET6
+a
+¿Cuál es la función de la llamada select()?
+a) Configurar opciones de socket
+b) Monitorizar múltiples descriptores de archivo para ver si alguno está listo para realizar operaciones de E/S 
+c) Cerrar un socket
+b
+¿Qué llamada al sistema se utiliza para terminar la recepción y el envío de datos en un socket?
+a) close()
+b) shutdown()  
+c) terminate()
+b
+¿Cuál es el propósito de la opción SO_LINGER en un socket?
+a) Configurar el tiempo máximo de espera para recibir datos
+b) Configurar el tiempo que el socket esperará para cerrar después de llamar a close() 
+c) Configurar el tamaño del buffer de recepción
+b
+¿Qué función se utiliza para obtener el nombre del host local?
+a) gethostname()  
+b) gethostbyname
+c) getaddrinfo
+a
+¿Qué constante se utiliza para representar la dirección de loopback en IPv6?
+a) INADDR_LOOPBACK
+b) IN6ADDR_LOOPBACK_INIT  
+c) INADDR_ANY
+b

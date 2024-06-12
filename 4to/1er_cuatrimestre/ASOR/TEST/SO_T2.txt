@@ -1,0 +1,641 @@
+¿Cuál de los siguientes es un ejemplo de un sistema de ficheros basado en disco?
+a) NFS
+b) ext4
+c) tmpfs
+b
+¿Cuál de las siguientes afirmaciones sobre un inodo es correcta? (NO ESTA EN LAS PRESENTACIONES) 
+a) Contiene una lista de todos los nombres de archivos en un directorio
+b) Contiene la información de control de un fichero, como el tamaño y los permisos
+c) Es un tipo de bloque de datos en el sistema de ficheros
+b
+¿Qué tipo de cerrojo permite que múltiples procesos lean una región de un fichero pero no escribir en ella?
+a) Cerrojo de escritura
+b) Cerrojo de lectura
+c) Cerrojo exclusivo
+b
+¿Qué hace la utilidad fsck en un sistema de ficheros tradicional que no se apaga correctamente? 
+a) Realiza una copia de seguridad del sistema de ficheros
+b) Comprueba la integridad y consistencia del sistema de ficheros
+c) Borra todos los inodos huérfanos
+b
+¿Qué llamada al sistema se utiliza para obtener el estado de un fichero, siguiendo enlaces simbólicos? 
+a) lstat
+b) fstat
+c) stat
+c
+¿Cuál de las siguientes es una característica de los sistemas de ficheros modernos como ext3 y XFS?
+a) No necesitan comprobar la integridad del sistema de ficheros en el siguiente arranque
+b) Utilizan un journal para mantener la consistencia del sistema de ficheros
+c) No soportan el journaling
+b
+¿Cuál de las siguientes operaciones es realizada por la llamada al sistema rename?
+a) Duplica un descriptor de fichero
+b) Elimina un fichero o directorio
+c) Cambia el nombre o ubicación de un fichero o directorio
+c
+¿Qué valor de la máscara (umask) debe establecerse para que los ficheros se creen con los permisos simbólicos rw- -w- r--, considerando que open(2) especifica los permisos 0666?
+a) 0024
+b) 0042
+c) 0624
+b COMPROBAR
+¿Qué estructura en un sistema de ficheros contiene información sobre cómo acceder a los bloques de datos? (NO ESTA EN LAS PRESENTACIONES)
+a) Super-bloque
+b) Inodo
+c) Descriptores de grupo
+b
+¿Cuál es un ejemplo de un sistema de ficheros basado en memoria? \
+a) UDF
+b) NTFS
+c) tmpfs
+c
+¿Cuál es el propósito de la capa VFS (Virtual File System)?
+a) Gestionar la memoria principal del sistema operativo
+b) Establecer un enlace entre el kernel del SO y los diferentes sistemas de ficheros
+c) Realizar copias de seguridad del sistema de ficheros
+b
+¿Qué llamada al sistema se utiliza para duplicar un descriptor de fichero?
+a) open
+b) dup
+c) link
+b
+¿Cuál de las siguientes opciones NO es un sistema de ficheros basado en red? 
+a) NFS
+b) SMB
+c) UFS
+c
+¿Qué comando se utiliza para cambiar los permisos de un fichero en Unix?
+a) chmod
+b) chown
+c) ln
+a
+¿Cuál es la principal diferencia entre un enlace rígido (hard link) y un enlace simbólico (soft link)?
+a) Un enlace rígido puede enlazar a directorios, mientras que un enlace simbólico no
+b) Un enlace simbólico puede enlazar a ficheros en diferentes sistemas de ficheros
+c) Un enlace rígido puede enlazar a ficheros en diferentes sistemas de ficheros
+b
+¿Cuál de los siguientes errores indica que no se tienen permisos sobre un fichero? \
+a) ENOENT
+b) EACCES
+c) EBADF
+b
+¿Qué función se utiliza para sincronizar un fichero, asegurando que todos los datos se escriban físicamente en el dispositivo de almacenamiento?
+a) sync
+b) fsync
+c) msync
+b
+¿Qué operación realiza la llamada al sistema open cuando se usa la bandera O_CREAT?
+a) Abre un fichero solo para lectura
+b) Crea un fichero si no existe
+c) Elimina un fichero existente
+b
+¿Qué atributo del inodo almacena el último acceso a los datos del fichero? 
+a) st_mtime
+b) st_ctime
+c) st_atime
+c
+¿Qué tipo de sistemas de ficheros residen en soportes de almacenamiento físicos como discos duros magnéticos y SSDs?
+a) Basados en memoria
+b) Basados en red
+c) Basados en disco
+c
+¿Qué llamada al sistema se utiliza para crear un nuevo directorio?
+a) mkdir
+b) rmdir
+c) chdir
+a
+¿Qué representa el campo st_mode en la estructura stat?
+a) El UID del propietario
+b) El modo de protección del fichero
+c) El número de enlaces rígidos
+b
+¿Qué significa la bandera O_NONBLOCK cuando se abre un fichero?
+a) Abre el fichero en modo de solo lectura
+b) Abre el fichero en modo no bloqueante
+c) Abre el fichero en modo síncrono
+b
+¿Qué estructura se optimiza mediante el uso de la caché de inodos y la caché de entradas de directorio (dentry)? \
+a) La capa VFS
+b) La tabla de inodos
+c) El super-bloque
+a
+¿Qué error se produce si se intenta crear un enlace rígido a un fichero en otro sistema de ficheros? (NO ESTA EN LAS PRESENTACIONES) \
+a) ENOENT
+b) EXDEV
+c) ENOTDIR
+b
+¿Qué llamada al sistema se utiliza para cambiar el propietario de un fichero? (NO ESTA EN LAS PRESENTACIONES)
+a) chmod
+b) chown
+c) fchmod
+b
+¿Qué función de llamada al sistema se utiliza para establecer la máscara de permisos de un proceso?
+a) chmod
+b) umask
+c) chown
+b
+¿Qué llamada al sistema se utiliza para eliminar un fichero? 
+a) unlink
+b) remove
+c) delete
+a 
+(remove es funcion de biblioteca)
+¿Qué atributo del inodo almacena el último cambio en el estado del inodo, como el cambio de propietario o permisos? \
+a) st_mtime
+b) st_ctime
+c) st_atime
+b
+¿Qué sistema de ficheros está diseñado para almacenar archivos en discos ópticos? \
+a) ISO9660
+b) ext4
+c) tmpfs
+a
+¿Cuál es la función de la caché de buffers/páginas en un sistema de ficheros?
+a) Proporcionar acceso directo a los inodos
+b) Mejorar la eficiencia de las operaciones de entrada/salida
+c) Gestionar los permisos de los ficheros
+b
+¿Cuál es la principal ventaja del journaling en sistemas de ficheros modernos?
+a) Reduce el tamaño del sistema de ficheros
+b) Asegura la consistencia del sistema de ficheros después de fallos
+c) Elimina la necesidad de backups
+b
+¿Qué llamada al sistema se utiliza para leer el contenido de un directorio?
+a) readdir
+b) opendir
+c) closedir
+a
+¿Qué representa el campo st_size en la estructura stat? \
+a) El tamaño del bloque para E/S
+b) El tamaño del fichero en bytes
+c) El número de bloques asignados
+b
+¿Qué hace el comando chmod con el modo u+s? \
+a) Establece el bit sticky en un fichero
+b) Establece el bit setuid en un fichero
+c) Establece el bit setgid en un fichero
+b
+¿Qué tipo de sistema de ficheros es NFS? 
+a) Basado en memoria
+b) Basado en disco
+c) Basado en red
+c
+¿Qué campo de la estructura stat indica el número de enlaces rígidos a un fichero? (NO ESTA EN LAS PRESENTACIONES)
+a) st_nlink
+b) st_mode
+c) st_ino
+a
+¿Qué comando se utiliza para crear un enlace simbólico en Unix?
+a) symlink
+b) link
+c) ln -s
+c
+¿Qué significa el error ENOTDIR?
+a) El fichero no existe
+b) Un componente de la ruta no es un directorio
+c) Permiso denegado
+b
+¿Qué sistema de ficheros se utiliza comúnmente en sistemas operativos Windows? (NO ESTA EN LAS PRESENTACIONES) 
+a) ext4
+b) NTFS
+c) HFS+
+b
+¿Qué comando se usa para cambiar el nombre de un fichero o directorio en Unix?
+a) mv
+b) cp
+c) rm
+a
+¿Qué llamada al sistema se utiliza para truncar un fichero a un tamaño específico?
+a) ftruncate
+b) fseek
+c) fclose
+a
+¿Cuál es el propósito del bit sticky en un directorio?
+a) Permitir que solo el propietario del fichero o directorio pueda eliminar o renombrar los ficheros en ese directorio
+b) Evitar que el fichero sea ejecutable
+c) Marcar el fichero como solo lectura
+a
+¿Qué llamada al sistema se utiliza para mover el puntero de lectura/escritura en un fichero abierto?
+a) lseek
+b) read
+c) write
+a
+¿Qué sistema de ficheros es conocido por su soporte robusto para volúmenes grandes y la gestión avanzada de permisos en sistemas Unix y Linux? \
+a) FAT32
+b) ext4
+c) HFS+
+b
+¿Qué comando se utiliza para montar un sistema de ficheros en Unix?
+a) mount
+b) umount
+c) mkfs
+a
+¿Qué significa el error ENOSPC en un sistema de ficheros? (NO ESTA EN LAS PRESENTACIONES) \
+a) No se encontró el fichero
+b) No hay espacio disponible en el dispositivo
+c) Permiso denegado
+b
+¿Qué atributo del inodo se incrementa cada vez que se crea un enlace rígido a un fichero? (NO ESTA EN LAS PRESENTACIONES)
+a) st_size
+b) st_nlink
+c) st_mode
+b
+¿Qué comando se utiliza para desmontar un sistema de ficheros en Unix?
+a) umount
+b) unmount
+c) dismount
+a
+¿Cuál es el tamaño típico de un bloque en un sistema de ficheros ext4? (NO ESTA EN LAS PRESENTACIONES)
+a) 512 bytes
+b) 1024 bytes
+c) 4096 bytes
+c
+¿Qué comando muestra el espacio libre en disco en sistemas Unix? (NO ESTA EN LAS PRESENTACIONES)
+a) df
+b) du
+c) ls
+a
+¿Qué comando se utiliza para ver los detalles de uso del disco por directorio y subdirectorio en Unix? (NO ESTA EN LAS PRESENTACIONES)
+a) df
+b) du
+c) ls
+b
+¿Qué función del sistema de ficheros permite la recuperación rápida en caso de un fallo del sistema?
+a) Backup incremental
+b) Journaling
+c) Fragmentación
+b
+¿Cuál es el propósito del super-bloque en un sistema de ficheros? (NO ESTA EN LAS PRESENTACIONES) \
+a) Contener la información de todos los ficheros
+b) Almacenar la configuración y estado del sistema de ficheros
+c) Gestionar las tablas de nodos i
+b
+¿Qué significa la bandera O_APPEND cuando se abre un fichero?
+a) Abre el fichero en modo de solo lectura
+b) Abre el fichero para añadir datos al final
+c) Abre el fichero en modo no bloqueante
+b
+¿Qué llamada al sistema se utiliza para obtener información sobre un fichero, sin seguir enlaces simbólicos?
+a) stat
+b) lstat
+c) fstat
+b
+¿Qué llamada al sistema se utiliza para crear un enlace simbólico?
+a) symlink
+b) link
+c) mklink
+a
+¿Qué llamada al sistema se utiliza para eliminar un directorio vacío?
+a) rmdir
+b) unlink
+c) remove
+a
+¿Qué significa la bandera O_RDWR cuando se abre un fichero?
+a) Abre el fichero en modo de solo lectura
+b) Abre el fichero en modo de solo escritura
+c) Abre el fichero en modo de lectura y escritura
+c
+¿Qué llamada al sistema se utiliza para cambiar el tamaño de un fichero a un tamaño específico? \
+a) truncate
+b) resize
+c) chsize
+a
+¿Qué estructura contiene la información sobre el tamaño y ubicación de los bloques de datos de un fichero en un sistema de ficheros? (NO ESTA EN LAS PRESENTACIONES)
+a) Super-bloque
+b) Inodo
+c) Tabla de particiones
+b
+¿Qué llamada al sistema se utiliza para abrir un fichero en Unix?
+a) open
+b) read
+c) write
+a
+¿Qué tipo de sistema de ficheros es ext3?
+a) Basado en memoria
+b) Basado en disco
+c) Basado en red
+b
+¿Qué significa el error EEXIST en un sistema de ficheros? (NO ESTA EN LAS PRESENTACIONES)
+a) El fichero o directorio no existe
+b) El fichero o directorio ya existe
+c) Permiso denegado
+b
+¿Qué sistema de ficheros es utilizado comúnmente en dispositivos de almacenamiento extraíbles como pendrives? (NO ESTA EN LAS PRESENTACIONES)\
+a) FAT32
+b) ext4
+c) NTFS
+a
+¿Qué llamada al sistema se utiliza para cerrar un fichero en Unix? 
+a) close
+b) fclose
+c) end
+a
+¿Qué campo de la estructura stat indica el tipo de fichero y permisos?
+a) st_mode
+b) st_size
+c) st_ino
+a
+¿Qué llamada al sistema se utiliza para leer datos de un fichero en Unix?
+a) read
+b) write
+c) get
+a
+¿Qué comando se utiliza para listar el contenido de un directorio en Unix?
+a) ls
+b) dir
+c) list
+a
+Desde el punto de vista del usuario, qué son los sistemas de ficheros // BEGIN: (IsaNuTor)
+a) Colección de ficheros y directorios usados para guardar y organizar la información
+b) Conjunto de tablas y estructuras que permiten gestionar los ficheros y directorios
+c) Conjuntos de archivos que se almacenan en una base de datos gestionados por funciones
+a
+Desde el punto de vista del sistema operativo, qué son los sistemas de ficheros
+a) Colección de ficheros y directorios usados para guardar y organizar la información
+b) Conjunto de tablas y estructuras que permiten gestionar los ficheros y directorios
+c) Conjuntos de archivos que se almacenan en una base de datos gestionados por funciones
+b
+¿Qué tipos de sistemas de ficheros diferentes existen?
+a) Basados en disco, en red y en memoria
+b) Basados en disco y memoria
+c) Basados en disco, en tablas, en red y en memoria
+a
+¿Qué tipo de sistema de fichero reside en soportes de almacenamiento físicos como discos, duros magnéticos, unidades de estado sólido...
+a) Basados en red (o distribuidos)
+b) Basados en memoria (o pseudo)
+c) Basados en disco
+c
+¿Qué tipo de sistema de fichero se utilizan para acceder a sistemas de ficheros remotos independientemente del tipo
+a) Basados en red (o distribuidos)
+b) Basados en memoria (o pseudo)
+c) Basados en disco
+a
+¿Qué tipo de sistema de fichero residen en memoria principal mientras el SO se está ejecutando
+a) Basados en red (o distribuidos)
+b) Basados en memoria (o pseudo)
+c) Basados en disco
+b
+¿En qué se basan los sistemas de ficheros NFS y SMB? \
+a) Basados en red (o distribuidos)
+b) Basados en memoria (o pseudo)
+c) Basados en disco
+a
+¿En qué se basan los sistemas de ficheros ext2-3-4, NTFS, FAT, ZFS?
+a) Basados en red (o distribuidos)
+b) Basados en memoria (o pseudo)
+c) Basados en disco
+c
+¿En qué se basan los sistemas de ficheros procfs, tmpfs?
+a) Basados en red (o distribuidos)
+b) Basados en memoria (o pseudo)
+c) Basados en disco
+b
+¿Qué sistema de ficheros es fiable y tiene un buen rendimiento pero tiene problemas para garantizar la consistencia de las estructuras de datos compartidas
+a) Basados en red (o distribuidos)
+b) Basados en memoria (o pseudo)
+c) Basados en disco
+a
+¿Qué sistema de ficheros no es persistente?  \
+a) Basados en red (o distribuidos)
+b) Basados en memoria (o pseudo)
+c) Basados en disco
+b
+¿Qué sistema de ficheros es mejor utilizar cuando necesitamos muy buen rendimiento y guardamos datos volátiles?
+a) Basados en red (o distribuidos)
+b) Basados en memoria (o pseudo)
+c) Basados en disco
+b
+¿La interfaz es distinta según el sistema de ficheros? 
+a) Sí, existe una distinta por cada sistema de ficheros
+b) Sí, existen dos interfaces diferentes
+c) No, es la misma para todos los sistemas
+c
+¿Cómo se llama a la capa de abstracción que se situa por encima de todos los sistemas de ficheros distintos?
+a) Virtual File System
+b) Capa de Sistemas de Ficheros
+c) Fast File System
+a
+Indica cuál es correcta para el Virtual File System
+a) Establece un enlace bien definido entre el kernel del SO y los diferentes sistemas de ficheros
+b) Proporciona las diferentes llamadas para la gestión de ficheros, independientes del sistema de ficheros
+c) Ambas
+c
+Indica cuál es correcta para el Virtual File System
+a) Permite acceder a múltiples sistemas de ficheros distintos
+b) Permite acceder a un sistema de fichero
+c) Permite acceder simultáneamente a dos sistemas de ficheros únicamente
+a
+¿Cómo optimiza la entrada/salida la VFS (Virtual File System)?
+a) La cache de i-nodos y la cache entradas de directorio (dentry) de VFS
+b) La cache de buffers/páginas (sync)
+c) Ambas
+c
+En journaling, ¿Cómo se llama al fichero especial que evita la corrupción de datos?
+a) XFS
+b) Bitácora/jornal
+c) FFS
+b
+La estructura de grupos de bloques del sistema de fichero está inspirado en...
+a) Bitácora
+b) VFS (Virtual File System)
+c) FFS (Fast File System)
+c
+¿A qué operaciones afecta el journal?
+a) Sólo lectura
+b) Sólo escritura
+c) Lectura y Escritura
+b
+¿Cuáles son las variantes de journaling? (NO ESTA EN LOS APUNTES)
+a) Writeback, Ordered, Journal
+b) Writeback, Readed, Journal
+c) Ninguna de las anteriores
+a
+¿Cuál es la variante de Journaling en la que primero se escriben los datos y luego los metadatos en la bitácora? (NO ESTA EN LOS APUNTES) \
+a) Writeback
+b) Ordered
+c) Journal
+b
+¿Cuál es la variante de Journaling más lenta y que ofrece mayor protección? (NO ESTA EN LOS APUNTES)
+a) Writeback
+b) Ordered
+c) Journal
+c
+¿Cuál es la variante de Journaling que escribe tanto los datos como los metadatos en la bitácora? (NO ESTA EN LOS APUNTES) \
+a) Writeback
+b) Ordered
+c) Journal
+c
+¿Cuál es la variante de Journaling por defecto en ext3? (NO ESTA EN LOS APUNTES) \
+a) Writeback
+b) Ordered
+c) Journal
+b
+¿Cuál es la variante de Journaling más rápida?
+a) Writeback
+b) Ordered
+c) Journal
+a
+¿Qué afirmación NO es correcta respecto al Writeback y su modo de escritura de los datos? (NO ESTA EN LOS APUNTES)
+a) Los datos pueden escribirse después de que sus metadatos asociados hayan sido escritos en la bitácora y es el modo más rápido
+b) Pueden perderse datos y aparecer datos antiguos después de un fallo y recuperar el sistema de ficheros a partir de la bitácora
+c) Los datos se escriben en el sistema de ficheros antes de escribir los metadatos en la bitácora y es el modo por defecto en ext3
+c
+¿Qué afirmación SI es correcta respecto al Ordered y su modo de escritura de los datos? (NO ESTA EN LOS APUNTES)
+a) Los datos pueden escribirse después de que sus metadatos asociados hayan sido escritos en la bitácora y es el modo más rápido
+b) Los datos se escriben en el sistema de ficheros antes de escribir los metadatos en la bitácora y es el modo por defecto en ext3
+c) Ofrece mayor protección frente a fallos y es el modo más lento
+b
+¿Qué afirmación SI es correcta respecto al Journal y su modo de escritura de los datos? (NO ESTA EN LOS APUNTES)
+a) Los datos pueden escribirse después de que sus metadatos asociados hayan sido escritos en la bitácora y es el modo más rápido
+b) Los datos se escriben en el sistema de ficheros antes de escribir los metadatos en la bitácora y es el modo por defecto en ext3
+c) Ofrece mayor protección frente a fallos y es el modo más lento
+c
+Indica cuál es la correcta
+a) stat sigue enlaces simbólicos, mientras que lstat no
+b) stat sigue enlaces simbólicos, mientras que fstat no
+c) lstat obtiene el estado de un fichero mediante un descriptor (open())
+a	
+Indica cuál es la correcta
+a) No se necesitan permisos sobre el fichero, pero sí para buscar en PATH
+b) stat sigue enlaces simbólicos, mientras que fstat no
+c) lstat obtiene el estado de un fichero mediante un descriptor (open())
+a
+¿Cúal de los siguientes métodos para obtener el estado de un fichero NO sigue enlaces simbólicos?
+a) int stat(const char *file_name, struct stat *buf);
+b) int lstat(const char *file_name, struct stat *buf);
+c) int fstat(int fd, struct stat *buf);
+b
+¿Indica cuál es la correcta
+a) int stat(int fd, struct stat *buf);
+b) int lstat(int fd, struct stat *buf);
+c) int fstat(int fd, struct stat *buf);
+c
+¿Qué significa la 's' en los permisos de un fichero? 
+a) Que se trata de un enlace simbólico
+b) Que el setuid está activado
+c) Que es un socket
+b
+¿Indica qué tiene que ser cierto para realizar la modificación de los permisos de un fichero? 
+a) El UID efectivo del proceso debe ser 0 (root) o coincidir con el del propietario
+b) El UID efectivo del proceso debe ser 1 (root) o coincidir con el del propietario
+c) El UID efectivo del proceso debe coincidir con el del propietario
+a
+¿De que tipo son los permisos de los ficheros?
+a) Lectura, escritura y ejecución
+b) Lectura, escritura y modificación
+c) Lectura, escritura y borrado
+a
+¿En qué orden están los permisos de los ficheros?
+a) rxw
+b) rwx
+c) wxr
+b
+¿Qué función para la creación y apertura de ficheros es correcta?
+a) void open(const char *path, int flags);
+b) int open(const char *path, int flags);
+c) char open(const char *path, int flags);
+b
+¿Qué devuelve la función open?
+a) Devuelve un entero con el tamaño del fichero
+b) Devuelve un descriptor de fichero con el puntero de acceso posicionado al principio del fichero, o -1 si ocurre un error
+c) Devuelve un número -1 si es error y cualquier otro si se ha abierto correctamente
+b
+Indica cuál es correcta
+a) Los permisos indicados en umask son borrados del argumento mode con mode & umask.
+b) Los permisos indicados en umask son borrados del argumento mode con mode & ~umask.
+c) Ninguna de las anteriores
+b
+¿Cuál es el valor por defecto de umask?
+a) 022
+b) S_IWGRP | S_IWOTH
+c) Ambas
+c
+¿Cuál es el valor por defecto de umask?
+a) 022
+b) 0777
+c) 027
+a
+¿Qué funciones del sistema se usan para leer, escribir ficheros? 
+a) read, write
+b) fread, fwrite
+c) ambas
+a
+¿Qué funciones de librería se usan para leer, escribir ficheros?
+a) read, write
+b) fread, fwrite
+c) ambas
+b
+¿Qué función utilizamos para crear un enlace rígido (hard link)?
+a) int unlink(const char *name);
+b) int symlink(const char *exist, const char *new);
+c) int link (const char *exist, const char *new);
+c
+¿Qué función utilizamos para crear un enlace enlace simbólico (soft link o symlink)?
+a) int unlink(const char *name);
+b) int symlink(const char *exist, const char *new);
+c) int link (const char *exist, const char *new);
+b
+¿Se puede crear un enlace duro entre ficheros o directorios en distintos sistemas de ficheros, o a pesar de que el fichero original no exista?
+a) No, solo se pueden realizar sobre ficheros en el mismo sistema de ficheros
+b) Sí pero solo directorios, con ficheros no se puede
+c) Sí pero si ya existe el fichero
+a
+¿Al crear un enlace duro o simbólico sobre el nuevo fichero, será sobrescrito? 
+a) Sí pero solo si el enlace es rígido
+b) Sí pero solo si el enlace es simbólico
+c) No será sobrescrito
+c
+¿Con qué función podemos leer el contenido de la ruta de un enlace simbólico?
+a) int read(const char *path, char *b, size_t tb);
+b) int readlink(const char *path, char *b, size_t tb);
+c) int readlk(const char *path, char *b, size_t tb);
+b
+¿Qué función se utiliza para los cerrojos, bloquear regiones de un fichero?
+a) int fcntl(int fd, int cmd);
+b) int fcntl(int fd, int cmd, long arg);
+c) int fcntl(int fd, int cmd, struct flock *lock);
+c
+¿Qué tipo de cerrojo es de lectura o compartido?
+a) F_RDLCK
+b) F_UNLCK
+c) F_WRLCK
+a
+¿Qué tipo de cerrojo es de escritura o exclusivo?
+a) F_RDLCK
+b) F_UNLCK
+c) F_WRLCK
+c
+¿Qué tipos de cerrojos pueden establecerse varios sobre una misma región? 
+a) F_RDLCK
+b) F_UNLCK
+c) F_WRLCK
+a
+¿Qué tipo de cerrojo solo puede haber uno en una misma región?
+a) F_RDLCK
+b) F_UNLCK
+c) F_WRLCK
+c
+¿Qué función utilizamos para leer las entradas de un directorio?
+a) DIR *opendir(const char *name);
+b) struct dirent *readdir(DIR *dir);
+c) int mkdir(const char *path, mode_t mode);
+b
+¿Cómo se podrían fijar los permisos rw- r-- r-x de archivo.txt?
+a) $chmod 645 archivo.txt
+b) $chmod u+rw-x,g+r-wx,o+rx-w archivo.txt
+c) Ambas formas
+c
+¿Cuál sería la orden para fijar la máscara y que los nuevos ficheros no tengan permisos de escritura para el grupo y lectura y ejecución para otros?
+a) $umask 027
+b) $umask 025
+c) $umask 024
+b
+¿Qué tipo de enlaces se pueden crear para directorios?
+a) Enlaces rígidos y simbólicos si estamos en el mismo sistema de ficheros
+b) Enlaces rígidos y simbólicos
+c) Únicamente enlaces simbólicos
+c
+¿Cuál es la correcta si queremos redirigir la salida estándar y la salida estándar de error al fichero archivo.txt? \
+a) ls > archivo.txt 2>&1
+b) ls 2&1 > archivo.txt
+c) Las dos están bien ya que no importa el orden de las redirecciones
+a

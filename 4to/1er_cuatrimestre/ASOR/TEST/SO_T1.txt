@@ -1,0 +1,370 @@
+¿Qué efecto tiene que un ejecutable tenga activado el permiso SETUID?
+a) El proceso se creará con permisos de superusuario.
+b) El proceso se creará con usuario (UID) igual al propietario del fichero.
+c) El proceso se creará con usuario efectivo (EUID) igual al propietario del fichero.
+c
+Una función de biblioteca...
+a) No puede usar internamente llamadas al sistema.
+b) Es una función de la biblioteca estándar de C que solicita un servicio del sistema.
+c) No interacciona de forma directa con el sistema.
+c
+¿Qué se necesita para trazar las llamadas al sistema realizadas por un programa?
+a) perror
+b) strace
+c) strerror
+b
+¿Qué comando se utiliza para obtener la fecha y hora del sistema en la estructura apuntada por tv?
+a) getppid
+b) strcmp
+c) gettimeofday
+c
+¿Cuál de las siguientes opciones se usa para especificar una opción larga en los argumentos de un programa según POSIX?
+a) Un solo guión seguido de un nombre
+b) Dos guiones seguidos de un nombre
+c) Un asterisco seguido de un nombre
+b
+¿Cuál es la función que se utiliza para imprimir un mensaje de error en la salida estándar de error (stderr)?
+a) perror
+b) strace
+c) strerror
+a
+¿Qué tipo de estructura devuelven las funciones gmtime y localtime? \
+a) struct tm
+b) struct time
+c) struct date
+a
+¿Cuál de las siguientes opciones permite buscar páginas específicas del manual? \
+a) man [section] comando
+b) man -k keyword
+c) man --help
+b
+¿Cuál es el valor devuelto por una llamada al sistema cuando se produce un error?
+a) 0
+b) -1
+c) NULL
+b
+¿Qué tipo de errores puede recopilar la opción -c de strace? \
+a) Errores de compilación
+b) Errores de enlace
+c) Errores de llamadas al sistema y resumen del tiempo
+c
+¿Cuál es el estándar de programación más general adoptado por ANSI e ISO?
+a) SVID
+b) POSIX
+c) ANSI-C
+c
+¿Qué significa el valor de retorno de -1 en una llamada al sistema?
+a) La llamada al sistema fue exitosa.
+b) Se produjo un error en la llamada al sistema.
+c) La llamada al sistema no se completó.
+b
+¿Qué sección del manual de Linux contiene las funciones de biblioteca?
+a) Sección 2
+b) Sección 3
+c) Sección 4
+b
+¿Qué comando permite obtener información sobre el sistema operativo?
+a) sysconf
+b) uname
+c) gettimeofday
+b
+¿Cuál de las siguientes opciones describe una función de biblioteca en C?
+a) Una función que solicita directamente un servicio del núcleo del SO.
+b) Una función que utiliza llamadas al sistema para interactuar con el SO.
+c) Una función que siempre interactúa directamente con el hardware.
+b
+¿Qué cabecera es necesaria para utilizar la función strerror? \
+a) <string.h>
+b) <errno.h>
+c) <time.h>
+a
+¿Cuál es la estructura devuelta por la función uname para obtener información del sistema operativo?
+a) struct utsname
+b) struct uname
+c) struct sysname
+a
+¿Qué función se utiliza para formatear fecha y hora en C?
+a) strftime
+b) printf
+c) time
+a
+¿Qué sección del manual de Linux/Unix documenta los comandos de administración del sistema? \
+a) Sección 7
+b) Sección 8
+c) Sección 9
+b
+¿Qué función devuelve un puntero a una estructura asignada estáticamente con la hora desglosada en UTC?
+a) localtime
+b) gmtime
+c) gettimeofday
+b
+¿Qué define el estándar POSIX?
+a) Una colección de algoritmos criptográficos.
+b) Estándares para la interfaz del sistema operativo y las llamadas al sistema.
+c) Estándares para el diseño de interfaces gráficas.
+b
+¿Qué función de C imprime un mensaje de error?
+a) perror
+b) fprintf
+c) printf
+a
+¿Qué variable en C se utiliza para obtener el código del último error?
+a) errno
+b) errorcode
+c) errnum
+a
+¿Qué comando se utiliza para trazar las llamadas al sistema realizadas por un programa?
+a) trace
+b) strace
+c) syscall
+b
+¿Cuál es el propósito de la función strerror en C?
+a) Imprimir la fecha y hora actual.
+b) Devolver una cadena que describe el número de error.
+c) Formatear cadenas de texto.
+b
+¿Cuál de las siguientes opciones no es una sección del manual de Linux? \
+a) Sección 1: Comandos y aplicaciones
+b) Sección 6: Demostraciones y juegos
+c) Sección 10: Configuración de red
+c
+¿Qué incluye el estándar POSIX además de las llamadas al sistema y de biblioteca?
+a) Especificaciones de hardware.
+b) Especificaciones de la shell y comandos mínimos.
+c) Algoritmos de inteligencia artificial.
+b
+¿Qué función se utiliza para obtener información de configuración del sistema en C?
+a) sysconf
+b) confinfo
+c) getconfig
+a
+¿Qué sección del manual de Linux describe los formatos de ficheros y convenciones?
+a) Sección 3
+b) Sección 5
+c) Sección 7
+b
+¿Cuál es el propósito del argumento optarg en la función getopt de C?
+a) Indicar el número total de argumentos.
+b) Almacenar el valor del argumento de la opción.
+c) Almacenar el índice del primer argumento que no es una opción.
+b
+¿Qué define la función principal de un programa en C según POSIX?
+a) int main(void);
+b) int main(int argc, char **argv);
+c) void main(int argc, char **argv);
+b
+¿Qué estándar fue desarrollado en la Universidad de California, Berkeley?
+a) ANSI-C
+b) BSD
+c) SVID
+b
+¿Qué indica el valor de retorno de uname si ocurre un error?
+a) -1
+b) 0
+c) 1
+a
+¿Qué biblioteca estándar de C se debe incluir para usar la función uname?
+a) <sys/types.h>
+b) <sys/utsname.h>
+c) <unistd.h>
+b
+¿Qué tipo de llamadas al sistema se pueden trazar usando strace -e trace=call? \
+a) Llamadas de red y de archivo.
+b) Llamadas de biblioteca y de red.
+c) Llamadas de señal y de hardware.
+a
+¿Qué archivo de cabecera es necesario para utilizar la función perror en C? \
+a) <stdio.h>
+b) <errno.h>
+c) <stdlib.h>
+a
+¿Qué función se utiliza para obtener la hora actual del sistema en C? \
+a) time
+b) gettimeofday
+c) clock
+b
+¿Qué sección del manual de Linux contiene la documentación del núcleo y desarrollo de drivers? \
+a) Sección 7
+b) Sección 8
+c) Sección 9
+c
+¿Qué llamada al sistema devuelve información sobre el sistema operativo?
+a) sysconf
+b) uname
+c) gettimeofday
+b
+¿Cuál de las siguientes opciones es un estándar de programación adoptado por ANSI?
+a) BSD
+b) POSIX
+c) ANSI-C
+c
+¿¿Qué función de biblioteca se utiliza para obtener la longitud máxima de argumentos en funciones exec()?
+a) uname
+b) sysconf
+c) getconf
+b
+¿Qué función de biblioteca convierte el tiempo desde 1900 a una estructura tm en la zona horaria local?
+a) localtime
+b) gmtime
+c) mktime
+a
+¿Qué estandar describe las llamadas al sistema y de biblioteca, y especifica la semántica detallada de la shell?
+a) ANSI-C
+b) POSIX
+c) SVID
+b
+¿Qué función se utiliza para devolver una cadena que describe el número de error? 
+a) perror
+b) strerror
+c) fprintf
+b
+¿Cuál de las siguientes es una estructura que contiene información de la fecha y hora?
+a) time_t
+b) tm
+c) timeval
+b
+¿Qué argumento se utiliza en strace para mostrar el tiempo de cada llamada al sistema?
+a) -c
+b) -f
+c) -T
+c
+¿Cuál es el valor de retorno típico de una llamada al sistema cuando se produce un error?
+a) 0
+b) -1
+c) NULL
+b
+¿Qué comando en Unix proporciona acceso a la información de configuración del sistema?
+a) uname
+b) getconf
+c) sysctl
+b
+¿Qué función se utiliza para obtener información sobre el hardware del sistema?
+a) sysinfo
+b) uname
+c) gethardware
+b
+¿Qué estándar de programación incluye la definición de enlaces simbólicos y sockets? \
+a) ANSI-C
+b) BSD
+c) POSIX
+b
+¿Qué llamada al sistema proporciona acceso a la información del tiempo en formato UTC?
+a) localtime
+b) gmtime
+c) mktime
+b
+¿Cuál de los siguientes no es un argumento posible para la función sysconf?
+a) _SC_ARG_MAX
+b) _SC_CLK_TCK
+c) _SC_GETTIME
+c
+¿Qué función formatea la fecha y hora en una cadena de caracteres?
+a) strftime
+b) mktime
+c) asctime
+a
+¿Cómo se llama a la descripción formal de las distribuciones comerciales de UNIX por AT&T (Su principal contribución son los mecanismos IPC)? // BEGIN: (IsaNuTor)
+a) BSD
+b) SVID
+c) POSIX
+b
+¿Cuál es un SO de tipo UNIX de software libre con licencia GNU GPL (Linux utiliza este tipo de software junto con un kernel propio de Linux)?
+a) GNU
+b) SVID
+c) POSIX
+a
+¿En qué secciones están definidas las funciones de sistema y librería?
+a) Sección de manual 1/4 respectivamente
+b) Sección de manual 2/3 respectivamente
+c) Sección de manual 4/6 respectivamente
+b
+¿Cuál es correcta para las llamadas al sistema en el código de error?
+a) NULL + no errno
+b) 0 + errno
+c) -1 + errno
+c
+¿Cuál es correcta para las llamadas a librerías en el código de error?
+a) NULL + no errno
+b) -1 + errno 
+c) 0 + errno
+a
+¿En las llamadas al sistema se reserva espacio para los parámetros en la memoria? 
+a) Sí, se reserva un espacio dinámico o estático
+b) Sí, se reserva un espacio estático
+c) No se reserva
+c
+¿En las llamadas a librerías se reserva espacio para los parámetros en la memoria? 
+a) Sí, se reserva un espacio dinámico
+b) Sí, se reserva un espacio dinámico o estático
+c) No se reserva
+b
+¿Cuál es el área de ejecución de las llamadas al sistema? 
+a) Usuario/Kernel 
+b) Kernel
+c) Usuario
+a
+¿Cuál es el área de ejecución de las llamadas a librerías? 
+a) Usuario/Kernel 
+b) Kernel
+c) Usuario
+c
+¿Qué se utiliza para comprobar la traza de las llamadas al sistema realizadas por un programa?
+a) strace [argumentos] comando [opciones]
+b) strace [opciones] comando [argumentos]
+c) comando [opciones] strace [argumentos] 
+b
+¿Qué significa el código de error "EFAULT"? 
+a) Error interno de la fuente del sistema
+b) Buffer no es válido
+c) No se pudo leer la entrada de la función
+b
+¿Qué devuelve la función sysconf(int name)?  
+a) long 
+b) char 
+c) int 
+a
+¿En caso de error, se instancia la variable errno en la función sysconf?  
+a) Si, devuelve -1 en caso de error
+b) No, pero devuelve -1 en caso de error
+c) No devuelve nada en caso de error
+b
+¿Con qué función obtenemos información sobre el sistema de ficheros?
+a) long sysconf(int name);
+b) int uname(struct utsname *buffer);
+c) long pathconf(char *path, int name);
+c
+En caso de error, se instancia la variable errno en la función pathconf/fpathconf?  \
+a) Si, se instancia errno tanto para error o que no exista
+b) Si, pero solo en caso de error, si no existe no se instancia
+c) No, no se instancia errno
+b
+¿Cómo se llama el identificador que se comprueba para conceder permisos? 
+a) UID/GID
+b) EUID/EGID
+c) PUID/PGID
+b
+¿Cuando se usan las funciones de struct passwd *getpwnam(const char *name) // struct passwd *getpwuid(uid_t uid), ¿Qué devuelve si no encuentra al usuario o si se produce algún error?
+a) -1
+b) NULL
+c) 0
+b
+¿Qué significa el código de error "ENOMEM"? 
+a) violación del segmento
+b) Buffer no es válido
+c) No puede reservar memoria para la estructura
+c
+¿Qué función devuelve el tiempo en segundos desde el Epoch?
+a) time_t time(time_t *t);
+b) int time(time_t *t);
+c) time time(time_t *t);
+a
+¿A qué se refiere el Epoch?
+a) Se refiere a 1940-01-01 00:00:00 +0000, UTC
+b) se refiere a 1970-01-01 00:00:00 +0000, UTC
+c) se refiere a 2000-01-01 00:00:00 +0000, UTC
+b
+¿Qué función se usa para obtener y fijar la hora del sistema? \
+a) int gettimeofday(struct timeval *tv, struct timezone *tz); int settimeofday(const struct timeval *tv, const struct timezone *tz);
+b) time_t gettimeofday(struct timeval *tv, struct timezone *tz); time_t settimeofday(const struct timeval *tv, const struct timezone *tz);
+c) long gettimeofday(struct timeval *tv, struct timezone *tz); long settimeofday(const struct timeval *tv, const struct timezone *tz);
+a
