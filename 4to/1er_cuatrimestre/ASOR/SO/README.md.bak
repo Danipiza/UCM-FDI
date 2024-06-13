@@ -1,19 +1,8 @@
 # Exámenes y Prácticas de Sistemas Operativos
 
-
-## IMPORTANTES.
-T3.
-- Señales no han preguntado mucho, saber BLOQUEO y CAPTURA
-- (Ordinaria 1) Enero 2023 (Sim. Comandos)
-- (Ordinaria) Febrero 2021 (1 fd + terminal)
-
-T4:
-- (Ordinaria 1) Enero 2019 (UDP + "read" terminal) hora
-- (Ordinaria) Febrero 2018 (TCP) (no especifica pre/accept-fork)
-
 ## Tema 3
 Señales y tuberias. TODO...
-3 tipos de ejercicios:
+x tipos de ejercicios:
 - Señales
 - Combinar comandos con pipes. **Tuberia sin nombre** redirigir estandar entre procesos para ejecutar comandos combiandos >cmd1 | cmd2
 - Multiplexacion con tuberias. **tuberia con nombre**, con select gestionar varias tuberias.
@@ -25,18 +14,11 @@ Tuberia sin nombre:
 - (Ordinaria 1) Enero 2023 (Sim. Comandos)
 - (Ordinaria) Enero 2022 (Sim. Comandos)
 - (Ordinaria) Enero 2020 (Sim. Comandos)
-- (Ordinaria 2) Enero 2019 (Sim. Comandos)
 
 Multififo:
 - (Ordinaria 2) Enero 2023 (2 fd)
 - (Ordinaria) Febrero 2021 (1 fd + terminal)
 - (Ordinaria 1) Enero 2020 (2 fd)
-
-### TODO
-
-#### (Ordinaria 1) Enero 2019 
-Escribe un programa que lance un demonio del sistema. Recibirá el programa a lanzar como primer argumento y el resto de argumentos se interpretarán como argumentos del programa: ```$ ./daemonize comando arg1 arg2 ...```
-El proceso principal debe crear un proceso y terminar. El nuevo proceso debe crear una nueva sesión, fijar el directorio de trabajo a /tmp, mostrar los identificadores de proceso, de proceso padre, de grupo de procesos y de sesión, y ejecutar el programa con sus argumentos.
 
 ### Señales
 
@@ -45,8 +27,7 @@ Escriba un programa que cuente las veces que ha recibido las señales SIGINT y S
 
 ### Combinar comandos con pipes (sin nombre)
 
-#### (Ordinaria) Enero 2020 (pipe) y
-#### (Ordinaria 2) Enero 2019 (pipe) 
+#### (Ordinaria) Enero 2020 (pipe)
 Escribe un programa que ejecute dos comandos de la siguiente forma: 
 - Los comandos serán el primer y segundo argumento del programa. El resto de argumentos del programa se considerarán argumentos del segundo comando: ```$ ./conecta comando1 comando2 arg2_1 arg2_2 ...```
 - Cada comando se ejecutará en un proceso distinto, que imprimirá su PID por el terminal.
@@ -61,7 +42,7 @@ Escribe un programa que ejecute dos comandos de la siguiente forma:
 - El primer comando se ejecutará en un nuevo proceso y el segundo comando se ejecutará en el proceso principal. Ambos procesos imprimirán su PID por el terminal.
 - Se conectará la salida estándar del nuevo proceso con la entrada estándar del proceso principal mediante una tubería sin nombre.
 
-Código: [2023_O1pipe.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2023_O1pipe.c)
+//Código: [2023_O1pipe.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2023_O1pipe.c)
 
 
 ### Multiplexacion de tuberias
@@ -90,7 +71,6 @@ Escribe un programa que lea simultáneamente de dos tuberías con nombre (tuberi
 
 Concurrente:
 - (Ordinaria 3) Enero 2019 (TCP) (no especifica pre/accept-fork)
-- (Ordinaria) Febrero 2018 (TCP) (no especifica pre/accept-fork)
 
 Normal:
 - (Ordinaria 1) Enero 2023 (TCP) nice
@@ -99,8 +79,6 @@ Normal:
 - (Ordinaria) Febrero 2021 (UDP) stat
 - (Ordinaria) Enero 2020 (TCP) mensaje del cliente
 - (Ordinaria 1) Enero 2020 (UDP) hora 
-- (Ordinario 2) Enero 2019 (TCP) direccion y puerto del cliente
-- (Ordinaria 1) Enero 2019 (UDP + "read" terminal) hora
 
 ### Concurrentes
 
@@ -136,12 +114,3 @@ Escribe un programa servidor TCP que escuche en una dirección (IPv4 o IPv6 en c
 
 #### (Ordinaria 1) Enero 2020 (UDP)
 Escribe un programa servidor UDP que escuche peticiones realizadas a una dirección (IPv4 o IPv6 en cualquier formato) y puerto dados como argumentos. El servidor devolverá la hora (en formato HH:MM:SS) al recibir cualquier mensaje. En cada mensaje, el servidor mostrará la dirección y el puerto del cliente.
-
-#### (Ordinario 2) Enero 2019 (TCP)
-Escribe un programa servidor TCP que escuche peticiones realizadas a una dirección (IPv4 o IPv6 en cualquier formato) y puerto dados como argumentos. El servidor devolverá la dirección del cliente al recibir cualquier mensaje. En cada conexión, el servidor mostrará en el terminal la dirección y el puerto del cliente.
-
-#### (Ordinaria 1) Enero 2019 (UDP)
-Escribe un programa servidor UDP que escuche peticiones realizadas a una dirección (IPv4 o IPv6 en cualquier formato) y puerto dados como argumentos y desde el terminal, multiplexando ambos canales. El servidor devolverá la hora al recibir cualquier mensaje. En cada mensaje, el servidor mostrará en el terminal la dirección y el puerto del cliente.
-
-#### (Ordinaria) Febrero 2018 (TCP)
-Escriba un programa servidor TCP que escuche en una dirección (IPv4 o IPv6 en cualquier formato) y puerto dados como argumentos. El servidor devolverá lo que el cliente le envíe y será capaz de atender a varios clientes a la vez. En cada conexión, el servidor imprimirá la dirección y el puerto del cliente, así como el PID del proceso que la atiende. Finalmente, el servidor gestionará adecuadamente la finalización de los procesos hijo que cree. 
