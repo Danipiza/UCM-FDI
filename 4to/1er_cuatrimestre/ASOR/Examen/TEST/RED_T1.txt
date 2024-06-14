@@ -1,0 +1,275 @@
+¿Qué característica NO corresponde al protocolo IP?
+a) Es no orientado a conexión
+b) Realiza detección y recuperación de paquetes perdidos
+c) No garantiza que los paquetes lleguen en orden
+b
+¿Cuál es la notación utilizada para representar direcciones IP?
+a) Notación binaria
+b) Notación hexadecimal
+c) Notación decimal de punto
+c
+¿Qué funcionalidad proporciona el esquema global de direccionamiento del protocolo IP? \ 
+a) Asignación de direcciones MAC
+b) Fragmentación de paquetes
+c) Encapsulado de datos
+c
+¿Cuál de las siguientes es una dirección privada según el protocolo IP?
+a) 8.8.8.8
+b) 192.168.1.1
+c) 203.0.113.0
+b
+¿Qué bloque de direcciones se utiliza para multicast según RFC 1112? \
+a) 192.168.0.0/16
+b) 10.0.0.0/8
+c) 224.0.0.0/4
+c
+¿Cuál es el propósito principal del protocolo DHCP?
+a) Transferencia de archivos
+b) Configuración automática de parámetros de red
+c) Asignación de direcciones MAC
+b
+¿Qué mensaje DHCP envía el cliente para descubrir servidores disponibles?
+a) DHCPREQUEST
+b) DHCPOFFER
+c) DHCPDISCOVER
+c
+¿En qué puerto UDP opera el servidor DHCP?
+a) 67
+b) 68
+c) 69
+a
+¿Qué parámetro NO puede configurar DHCP?
+a) Dirección IP
+b) Máscara de red
+c) Dirección física (MAC)
+c
+¿Qué función realiza el agente de retransmisión DHCP (DHCP Relay Agent)? \
+a) Transmite mensajes DHCP entre servidores y clientes en la misma red
+b) Transmite mensajes DHCP entre servidores y clientes en diferentes redes
+c) Configura parámetros adicionales en el cliente
+b
+¿Cuál es la longitud de una dirección IPv4?
+a) 32 bits
+b) 64 bits
+c) 128 bits
+a
+¿Qué clase de dirección IP permite hasta 16 millones de hosts? 
+a) Clase A
+b) Clase B
+c) Clase C
+a
+¿Qué parte de una dirección IP de clase C se utiliza para identificar la red?
+a) Los primeros 8 bits
+b) Los primeros 16 bits
+c) Los primeros 24 bits
+c
+¿Cuál es el rango de direcciones IP de clase B? 
+a) 128.0.0.0 a 191.255.255.255
+b) 192.0.0.0 a 223.255.255.255
+c) 224.0.0.0 a 239.255.255.255
+a
+¿Qué dirección se utiliza para el broadcast en una red IPv4?
+a) 127.0.0.1
+b) La dirección con todos los bits de host en 1
+c) La dirección con todos los bits de red en 1
+b
+¿Qué significa NAT en el contexto de redes IP? (NO ESTA EN LOS APUNTES)
+a) Network Address Translation
+b) Network Allocation Table
+c) Network Access Transmission
+a
+¿Cuál de las siguientes es una dirección de loopback?
+a) 10.0.0.1
+b) 192.168.0.1
+c) 127.0.0.1
+c
+¿Qué herramienta de comando se utiliza para verificar la conectividad a una dirección IP en redes IPv4?
+a) nslookup
+b) traceroute
+c) ping
+c
+¿Qué protocolo se utiliza para la resolución de direcciones IP a direcciones MAC?
+a) ARP
+b) ICMP
+c) TCP
+a
+¿Cómo se llama a la respuesta de los servidores, con una oferta de parámetros de configuración (puede recibirse más de una)?
+a) DHCPREQUEST
+b) DHCPDISCOVER
+c) DHCPOFFER
+c
+¿Qué parámetro de red puede asignar DHCP además de la dirección IP? 
+a) Dirección MAC
+b) Dirección de gateway predeterminado
+c) Nombre del dominio
+b
+¿Qué técnica utiliza DHCP para reutilizar direcciones IP en una red? 
+a) Asignación estática
+b) Asignación dinámica
+c) Asignación automática
+b	
+¿En qué estado se encuentra un cliente DHCP después de recibir un DHCPOFFER? \
+a) Selecting
+b) Requesting
+c) Binding
+b
+¿Qué tipo de mensaje DHCPACK envía el servidor al cliente?
+a) Confirmación de la asignación de la dirección IP
+b) Ofrecimiento de una nueva dirección IP
+c) Rechazo de la solicitud de dirección IP
+a
+¿Qué protocolo utiliza DHCP para la comunicación entre el cliente y el servidor? \
+a) TCP
+b) UDP
+c) ICMP
+b
+¿Qué significa CIDR en el contexto de direcciones IP?
+a) Classless Inter-Domain Routing
+b) Classful Internet Designated Routing
+c) Centralized Internet Data Routing
+a
+¿Cuál es la dirección de red para la IP 192.168.10.35/27? \
+a) 192.168.10.0
+b) 192.168.10.32
+c) 192.168.10.64
+b
+¿Qué rango de direcciones IPv4 se considera reservado para redes locales?
+a) 172.16.0.0/12
+b) 8.0.0.0/8
+c) 200.0.0.0/8
+a
+¿Qué tipo de dirección IP es 255.255.255.255?
+a) Dirección de red
+b) Dirección de broadcast
+c) Dirección de loopback
+b
+¿Cuál es la máscara de subred para una dirección IPv4 con prefijo /20? 
+a) 255.255.240.0
+b) 255.255.255.0
+c) 255.255.248.0
+a
+¿Cuál de las siguientes es una dirección IP de clase C?
+a) 150.100.10.5
+b) 192.168.1.1
+c) 10.0.0.1
+b
+¿Qué ocurre cuando el cesion/lease de una dirección IP DHCP expira y no se renueva?
+a) La dirección se asigna a otro cliente
+b) La dirección se conserva para el cliente original
+c) La dirección se marca como reservada
+a
+¿Qué mensaje DHCP envía un cliente al renovar su cesion/lease? 
+a) DHCPRELEASE
+b) DHCPREQUEST
+c) DHCPDISCOVER
+b
+¿Cuál es el propósito del parámetro "cesion/lease time" en DHCP? 
+a) Especificar el tiempo de vida útil de una dirección IP asignada
+b) Determinar el tiempo de espera para una respuesta del servidor
+c) Configurar el tiempo de actualización del firmware del cliente
+a
+¿Qué comando en Linux se utiliza para liberar la dirección IP obtenida por DHCP? (NO ESTA EN LOS APUNTES)
+a) dhclient -r
+b) ifconfig down
+c) ip addr flush
+a
+¿Cuales de los siguientes protocolos pertenecen a la capa de aplicación? (BEGIN IsaNuTor) \
+a) HTTP, SMTP, TCP, DNS, FTP
+b) HTTP, SMTP, IP, ICMP, FTP
+c) HTTP, SMTP, POP3, DNS, FTP
+c
+¿Cómo se distingue una máquina en internet? \
+a) por su dirección Mac
+b) por su dirección IP
+c) por su puerto
+b
+¿Con qué se identifican las máquinas en la capa de enlace?
+a) por su dirección Mac
+b) por su dirección IP
+c) por su puerto
+a
+¿Cuales son las funciones que nos da el protocolo IP? \
+a) Direccionamiento, Routing, Fragmentación
+b) Direccionamiento y Routing pero no Fragmentación
+c) Routing y Fragmentación pero no direccionamiento
+a
+¿Qué protocolo está orientado a conexión?
+a) UDP
+b) TCP
+c) IP
+b
+¿Qué direcciones utilizan las aplicaciones para comunicarse dentro de la misma máquina? 
+a) dir broadcast
+b) dir privadas
+c) dir loopback
+c
+¿Qué significa que una dirección es privada?
+a) Que no se reservan para el uso en redes de área local (LAN)
+b) Que no es encaminable en internet, un router cuando ve una dirección privada no la encamina
+c) Son solamente multicast
+b
+¿Cuál es el protocolo de intercambio de mensajes de control en la red?
+a) ARP
+b) ICMP
+c) IP
+b
+¿Cuál es el protocolo que se usa para la traducción de direcciones IP y MAC?
+a) ARP
+b) ICMP
+c) IP
+a
+¿Qué tipo de comunicación necesitamos para preguntar la MAC asociada a una IP? \
+a) Unicast
+b) Multicast
+c) Broadcast
+c
+¿Cuántas redes privadas de clase A (/24) hay en el siguiente rango de direcciones: 10.0.0.0 - 10.255.255.255?
+a) 1
+b) 16
+c) 256
+a
+¿Cuántas redes privadas de clase B (/16) hay en el siguiente rango de direcciones: 172.16.0.0 - 172.31.255.255?
+a) 1
+b) 16
+c) 256
+b
+¿Cuántas redes privadas de clase C (/24) hay en el siguiente rango de direcciones: 192.168.0.0 - 192.168.255.255? 
+a) 1
+b) 16
+c) 256
+c
+¿Cómo se llama a la petición de oferta del cliente (broadcast, para notificar a todos los servidores) o extensión del tiempo de cesión (El servidor seleccionado se especifica en una opción)?
+a) DHCPREQUEST
+b) DHCPDISCOVER
+c) DHCPOFFER
+a
+¿Cómo se llama al mensaje de confirmación del servidor (broadcast) con parámetros definitivos?
+a) DHCPREQUEST
+b) DHCPACK
+c) Ninguna de los anteriores
+b
+¿Cómo se llama al mensaje del cliente para informar al servidor de que ha finalizado el uso de la dirección IP (no es obligatorio)?
+a) DHCPREQUEST
+b) DHCPDISCOVER
+c) DHCPRELEASE
+c
+¿Cuál es el orden normal de un diagrama de estados y mensajes en DHCP? 
+a) Selecting, Requesting, Bound, Renewing, Rebinding
+b) Selecting, Requesting, Rebinding, Renewing, Bound
+c) Selecting, Requesting, Renewing, Rebinding, Bound
+a
+¿Cuál de las siguientes opciones es correcta si tenemos la dirección de red 192.168.128.0/17? 
+a) dir broadcast: 255.255.128.0, máscara: 192.168.255.255, rango direcciones: 192.168.128.1-192.168.255.254
+b) dir broadcast: 192.168.255.255, máscara: 255.255.128.0, rango direcciones: 192.168.128.1-192.168.255.254
+c) dir broadcast: 192.168.255.255, máscara: 255.255.255.0, rango direcciones: 192.168.128.1-192.168.255.254
+b
+¿Qué mensaje DHCP se usa para realizar una petición de oferta por parte del cliente? 
+a) DHCPDISCOVER
+b) DHCPOFFER
+c) DHCPREQUEST
+c
+Con la introducción de CIDR, se pretende...
+a) ...ampliar el espacio total de direcciones.
+b) ...dividir el espacio de direcciones en bloques de tamaño fijo.
+c) ...aliviar el problema del agotamiento de direcciones.
+c

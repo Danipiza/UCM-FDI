@@ -1,19 +1,22 @@
-RIP. 2023 Enero - Práctico 1
+T5. RIP. 2023 Enero - Práctico 1
 configura RouterA (VM2) y RouterB (VM3) para que anuncien todas las redes usando RIP y configura el resto de la red para que todas las máquinas sean alcanzables entre sí.
 
-RIP. 2021 Febrero Práctico
+T5. RIP. 2021 Febrero Práctico
 Configura la red según las siguientes instrucciones:
 ● Configura los interfaces de todas las máquinas manualmente eligiendo adecuadamente sus direcciones IP.
 ● Configura RouterA (VM2) y RouterB (VM3) para que anuncien todas las redes usando RIP.
 ● Configura la red para que todas las máquinas sean alcanzables entre sí.
 
-RIP. 2020 Enero Práctico 1
+T5. RIP. 2020 Enero Práctico 1
 Despliega la topología de red que se muestra en la figura usando vtopol y la configuración proporcionada:
 ● Configura los interfaces de forma manual, eligiendo adecuadamente sus direcciones.
 ● Configura los encaminadores RouterA y RouterB para que anuncien todas las redes usando RIP.
 ● Comprueba que todas las máquinas son alcanzables entre sí.
 
-DNS. 2019 Enero Práctico 2
+T5. RIP. 2018 Feb Práctico.
+​Configure la topología de red que se muestra en la figura usando vtopol y la configuración proporcionada. Configure los interfaces de forma manual, eligiendo adecuadamente sus direcciones IP. Configure los encaminadores RouterA y RouterB para que anuncien todas las redes usando RIP. Compruebe que todas las máquinas son alcanzables entre sí.
+
+T3. DNS. 2019 Enero Práctico 2
 Configura la topología de red que se muestra en la figura usando vtopol y la configuración proporcionada:
 ● Configura los interfaces de forma manual, eligiendo adecuadamente sus direcciones IP.
 ● Configura VM1 como servidor DNS para el dominio examen.es con la siguiente información:
@@ -25,7 +28,7 @@ Configura la topología de red que se muestra en la figura usando vtopol y la co
 
 comentario: Configuración (0,5) Registros básicos (0,5) Todos los registros y cliente (0,5)
 
-DNS. 2023 Enero - Práctico 2
+T3. DNS. 2023 Enero - Práctico 2
 Configura VM1 como servidor DNS para el dominio examenasor.es con la siguiente información:
 ● El servidor primario es ns.examenasor.es, correspondiente a VM1.
 ● El e-mail de contacto es contact@examenasor.es.
@@ -37,12 +40,12 @@ Configura VM1 como servidor DNS para el dominio examenasor.es con la siguiente i
 Configura VM2 para que use VM1 como servidor DNS por defecto.
 
 
-DHCP. 2022 Enero Práctico
+T1. DHCP. 2022 Enero Práctico
 Configura el encaminador (VM3) para que anuncie por DHCP el rango de direcciones 192.168.0.140 - 192.168.0.160 y el encaminador por defecto. Configura el resto de la red para que todas las máquinas sean alcanzables entre sí. Comprueba que VM1 obtiene la dirección del servidor DHCP.
 
 
 
-Encaminamiento. 2020 Enero Práctico 2
+T5. Encaminamiento. 2020 Enero Práctico 2
 Despliega la topología de red que se muestra en la figura usando vtopol y la configuración proporcionada:
 ● Configura los interfaces de forma manual, eligiendo adecuadamente sus direcciones.
 ● Configura el encaminador Router para que anuncie prefijos en ambas redes.
@@ -50,17 +53,15 @@ Despliega la topología de red que se muestra en la figura usando vtopol y la co
 
 comentario: Hacer ping desde VM1 a VM2. Hacer ip address y comprobar que pone dynamic en la dirección obtenida a través del anuncio de prefijo.
 
-Encaminamiento. 2019 Enero Práctico 3
+T5. Encaminamiento. 2019 Enero Práctico 3
 Configura la topología de red que se muestra en la figura usando vtopol y la configuración proporcionada:
 ● Configura los interfaces de forma manual para Router y VMs, eligiendo adecuadamente sus direcciones IP.
 ● Configura Router para que anuncie el prefijo en la red FD00:1:1:A::/64.
 ● Configura el encaminamiento y comprueba que todas las máquinas son alcanzables entre sí.
 
-Encaminamiento. 2019 Ene Práctico 1.
+T5. Encaminamiento. 2019 Ene Práctico 1.
 Configura la topología de red que se muestra en la figura usando vtopol y la configuración proporcionada:
 ● Configura los interfaces de forma manual, eligiendo adecuadamente sus direcciones IP.
 ● Configura el encaminamiento y comprueba que todas las máquinas son alcanzables entre sí.
 ● Configura la traducción de direcciones de red origen considerando que la red de la izquierda es privada y que la red de la derecha es pública.
 
-Encaminamiento. 2018 Feb Práctico.
-​Configure la topología de red que se muestra en la figura usando vtopol y la configuración proporcionada. Configure los interfaces de forma manual, eligiendo adecuadamente sus direcciones IP. Configure los encaminadores RouterA y RouterB para que anuncien todas las redes usando RIP. Compruebe que todas las máquinas son alcanzables entre sí.
