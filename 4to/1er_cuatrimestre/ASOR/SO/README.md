@@ -24,8 +24,8 @@ Señales:
 Tuberia sin nombre:
 - (Ordinaria 1) Enero 2023 (Sim. Comandos)
 - (Ordinaria) Enero 2022 (Sim. Comandos)
-- (Ordinaria) Enero 2020 (Sim. Comandos)
-- (Ordinaria 2) Enero 2019 (Sim. Comandos)
+- (Ordinaria) Enero 2020 (Sim. Comandos con 2 procesos. padre espera y cierra todo) 
+- (Ordinaria 2) Enero 2019 (Sim. Comandos con 2 procesos. padre espera y cierra todo)
 
 Multififo:
 - (Ordinaria 2) Enero 2023 (2 fd)
@@ -51,6 +51,8 @@ Escribe un programa que ejecute dos comandos de la siguiente forma:
 - Los comandos serán el primer y segundo argumento del programa. El resto de argumentos del programa se considerarán argumentos del segundo comando: ```$ ./conecta comando1 comando2 arg2_1 arg2_2 ...```
 - Cada comando se ejecutará en un proceso distinto, que imprimirá su PID por el terminal.
 - El programa conectará la salida estándar del primer proceso con la entrada estándar del segundo, y esperará la finalización de ambos para terminar su ejecución.
+
+Código: [2020_Opipe.c.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2020_Opipe.c.c)
 
 #### (Ordinaria) Enero 2022 (pipe)
 Escribe un programa que cree dos procesos y ejecute un comando en cada uno, de forma que la salida del primer comando sea la entrada del segundo. El proceso padre imprimirá el PID y el código de salida de cada proceso. El programa se ejecutará de la siguiente manera:
@@ -134,6 +136,8 @@ Código: [2022_Otcp.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrim
 #### (Ordinaria) Enero 2020 (TCP)
 Escribe un programa servidor TCP que escuche en una dirección (IPv4 o IPv6 en cualquier formato) y puerto dados como argumentos. El servidor devolverá lo que el cliente le envíe. En cada conexión, el servidor mostrará la dirección y el puerto del cliente.
 
+- Código: [2020_Otcp.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2020_Otcp.c)
+- Extra (versión UDP): [2020_Oudp.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/Extra/2020_Oudp.c)
 #### (Ordinaria 1) Enero 2020 (UDP)
 Escribe un programa servidor UDP que escuche peticiones realizadas a una dirección (IPv4 o IPv6 en cualquier formato) y puerto dados como argumentos. El servidor devolverá la hora (en formato HH:MM:SS) al recibir cualquier mensaje. En cada mensaje, el servidor mostrará la dirección y el puerto del cliente.
 
