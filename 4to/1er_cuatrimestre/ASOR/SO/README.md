@@ -52,7 +52,7 @@ Escribe un programa que ejecute dos comandos de la siguiente forma:
 - Cada comando se ejecutará en un proceso distinto, que imprimirá su PID por el terminal.
 - El programa conectará la salida estándar del primer proceso con la entrada estándar del segundo, y esperará la finalización de ambos para terminar su ejecución.
 
-Código: [2020_Opipe.c.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2020_Opipe.c.c)
+- Código: [2020_Opipe.c.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2020_Opipe.c.c)
 
 #### (Ordinaria) Enero 2022 (pipe)
 Escribe un programa que cree dos procesos y ejecute un comando en cada uno, de forma que la salida del primer comando sea la entrada del segundo. El proceso padre imprimirá el PID y el código de salida de cada proceso. El programa se ejecutará de la siguiente manera:
@@ -63,7 +63,7 @@ Escribe un programa que ejecute dos comandos de la siguiente forma:
 - El primer comando se ejecutará en un nuevo proceso y el segundo comando se ejecutará en el proceso principal. Ambos procesos imprimirán su PID por el terminal.
 - Se conectará la salida estándar del nuevo proceso con la entrada estándar del proceso principal mediante una tubería sin nombre.
 
-Código: [2023_O1pipe.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2023_O1pipe.c)
+- Código: [2023_O1pipe.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2023_O1pipe.c)
 
 
 ### Multiplexacion de tuberias
@@ -71,17 +71,19 @@ Código: [2023_O1pipe.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatr
 ####  (Ordinaria 2) Enero 2023 (multi-fifo)
 Escribe un programa que lea simultáneamente dos tuberías con nombre usando multiplexación de E/S síncrona. Las tuberías existirán previamente en el directorio actual de trabajo y se llamarán fifo1 y fifo2. El programa mostrará el nombre de la tubería de la que ha leído y los datos leídos. Además, el programa cerrará y volverá a abrir la tubería al detectar el fin de fichero.
 
-Código: [2023_O2fifo.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2023_O2fifo.c)
+- Código: [2023_O2fifo.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2023_O2fifo.c)
 
 ####  (Ordinaria 2) Enero 2023 (multi-fifo con terminal)
 Escribe un programa que lea simultáneamente de una tubería con nombre, que existirá previamente en el directorio actual de trabajo y se llamará tuberia, y del terminal.
 - Imprimirá en el terminal los datos leídos y terminará tras 5 segundos sin recibir datos 
 - Al detectar el fin de fichero en la tubería, la cerrará y volverá a abrirla 
 
-Código: [2021_Ofifo.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2021_Ofifo.c)
+- Código: [2021_Ofifo.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2021_Ofifo.c)
 
 #### (Ordinaria 1) Enero 2020 (multi-fifo)
 Escribe un programa que lea simultáneamente de dos tuberías con nombre (tuberia1 y tuberia2). El programa mostrará el nombre de la tubería desde la que se leyó y los datos leídos. El programa detectará cuándo se cierra el extremo de escritura de una tubería (read() devuelve 0) para cerrarla y volver a abrirla.
+
+- Código: [2020_O1fifo.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2020_O1fifo.c)
 
 ---
 
@@ -115,7 +117,7 @@ Escriba un programa servidor TCP que escuche en una dirección (IPv4 o IPv6 en c
 Escribe un programa servidor UDP que escuche en una dirección (IPv4 o IPv6 en cualquier formato) y puerto dados como argumentos. Recibirá del cliente una ruta de fichero y le devolverá una cadena con el tipo del fichero (regular, directorio, enlace, fifo u otro). Además, al recibir cada mensaje imprimirá en el terminal la dirección y el puerto del cliente.
 :-----
 
-Código: [2021_Oudp.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2021_Oudp.c)
+- Código: [2021_Oudp.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2021_Oudp.c)
 
 
 #### (Ordinaria 1) Enero 2023 (TCP) 
@@ -138,8 +140,12 @@ Escribe un programa servidor TCP que escuche en una dirección (IPv4 o IPv6 en c
 
 - Código: [2020_Otcp.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2020_Otcp.c)
 - Extra (versión UDP): [2020_Oudp.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/Extra/2020_Oudp.c)
+
 #### (Ordinaria 1) Enero 2020 (UDP)
 Escribe un programa servidor UDP que escuche peticiones realizadas a una dirección (IPv4 o IPv6 en cualquier formato) y puerto dados como argumentos. El servidor devolverá la hora (en formato HH:MM:SS) al recibir cualquier mensaje. En cada mensaje, el servidor mostrará la dirección y el puerto del cliente.
+
+- Código: [2020_O1udp.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/Examenes/2020_O1udp.c)
+
 
 #### (Ordinario 2) Enero 2019 (TCP)
 Escribe un programa servidor TCP que escuche peticiones realizadas a una dirección (IPv4 o IPv6 en cualquier formato) y puerto dados como argumentos. El servidor devolverá la dirección del cliente al recibir cualquier mensaje. En cada conexión, el servidor mostrará en el terminal la dirección y el puerto del cliente.
