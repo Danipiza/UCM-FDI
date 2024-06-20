@@ -1,0 +1,6 @@
+﻿  main.cpp
+C:\Users\Usuario\Desktop\GITHUB\UCM\1ro\1er_cuatrimestre\FP1\Practica\Practica\main.cpp(304,6): warning C4101: 'dado': variable local sin referencia
+C:\Users\Usuario\Desktop\GITHUB\UCM\1ro\1er_cuatrimestre\FP1\Practica\Practica\main.cpp(302,6): warning C4101: 'ultFicha': variable local sin referencia
+C:\Users\Usuario\Desktop\GITHUB\UCM\1ro\1er_cuatrimestre\FP1\Practica\Practica\main.cpp(303,6): warning C4101: 'jugador': variable local sin referencia
+C:\Users\Usuario\Desktop\GITHUB\UCM\1ro\1er_cuatrimestre\FP1\Practica\Practica\main.cpp(301,6): warning C4101: 'cont6': variable local sin referencia
+  Practica.vcxproj -> C:\Users\Usuario\Desktop\GITHUB\UCM\1ro\1er_cuatrimestre\FP1\Practica\x64\Debug\Practica.exe
