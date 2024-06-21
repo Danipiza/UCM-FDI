@@ -3,16 +3,31 @@
 #include <string>
 #include <unordered_map>
 
+#include <cstdlib> // srand() y rand()
+#include <ctime>   // time()
+
 using namespace std;
+
+// En esta asignatura no se podia usar breaks y returns en los bucles.
 
 #define JIEINT 1
 #define CEINT 2
+#define MCE 3
+#define FIEINT 4
+
 
 const unordered_map<int, string> errorMessages = {
 	{JIEINT, "Error: Indice de jugador fuera de intervalo"},
 	{CEINT, "Error: Casilla fuera de intervalo"},
-	
+	{MCE, "Error: No hay ficha para mandar a casa"},
+	{FIEINT, "Error: Indice de ficha fuera de intervalo"},
+
 };
+
+#define CASILLASP 68
+#define JUGADORES 4
+#define FICHAS 4
+
 
 /*
 Precondicion: errorCode puede ser cualquier error
@@ -26,7 +41,7 @@ string getMensajeError(int errorCode) {
 	auto it = errorMessages.find(errorCode);
 
 	if (it != errorMessages.end()) ret = it->second;
-	else ret="Error desconocido";
+	else ret = "Error desconocido";
 
 	return ret;
 }
@@ -77,9 +92,9 @@ Recordemos los elementos y las reglas de nuestro juego del parchis:
 // dado se genera aleatoriamente
 
 typedef enum { Amarillo, Azul, Rojo, Verde, Ninguno, Gris } tColor;
-typedef tColor tCasillas[68];
-typedef int tFichas[4];
-typedef tFichas tJugadores[4];
+typedef tColor tCasillas[CASILLASP];
+typedef int tFichas[JUGADORES];
+typedef tFichas tJugadores[JUGADORES];
 
 
 
@@ -147,27 +162,27 @@ void setColor(int color) {
 
 
 void imprimeTablero(tJugadores jugadores, tCasillas fila1, tCasillas fila2) {
-	
-	
+
+
 	string print;
 	int i, j, k; // punteros
-	
+
 
 	cout << "00000000001111111111222222222233333333334444444444555555555566666666\n";
 	cout << "01234567890123456789012345678901234567890123456789012345678901234567\n";
 	cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
 
-	
+
 	// ----------------------------------------------------------------------------------
 	// --- Fila 2 -----------------------------------------------------------------------
 	// ----------------------------------------------------------------------------------
 
-	for (i = 0; i < 68; i++) {
+	for (i = 0; i < CASILLASP; i++) {
 		if (fila2[i] != Ninguno) {
-			setColor(fila1[i]);
+			setColor(fila2[i]);
 
-			for (j = 0; j < 4; j++) {
-				if (jugadores[j][colorAInt(fila2[i])] == i) {
+			for (j = 0; j < JUGADORES; j++) {
+				if (jugadores[colorAInt(fila2[i])][j] == i) {
 					cout << j + 1;
 					break;
 				}
@@ -178,19 +193,19 @@ void imprimeTablero(tJugadores jugadores, tCasillas fila1, tCasillas fila2) {
 	}
 	cout << "\n";
 
-	
-	cout << "o----o------o----o----o------o----o----o------o----o----o------o----\n"; 
+
+	cout << "o----o------o----o----o------o----o----o------o----o----o------o----\n";
 
 	// ----------------------------------------------------------------------------------
 	// --- Fila 1 -----------------------------------------------------------------------
 	// ----------------------------------------------------------------------------------
-	
-	for (i = 0; i < 68; i++) {
+
+	for (i = 0; i < CASILLASP; i++) {
 		if (fila1[i] != Ninguno) {
 			setColor(fila1[i]);
-			
-			for (j = 3; j >= 0; j--) {				
-				if (jugadores[j][colorAInt(fila1[i])] == i) {
+
+			for (j = 3; j >= 0; j--) {
+				if (jugadores[colorAInt(fila1[i])][j] == i) {
 					cout << j + 1;
 					break;
 				}
@@ -205,7 +220,7 @@ void imprimeTablero(tJugadores jugadores, tCasillas fila1, tCasillas fila2) {
 	// --- Entrada a meta ---------------------------------------------------------------
 	// ----------------------------------------------------------------------------------
 
-	for (i = 0; i < 4; i++) {
+	for (i = 0; i < JUGADORES; i++) {
 		setColor(i);
 		cout << "V";
 		setColor(4);
@@ -216,38 +231,38 @@ void imprimeTablero(tJugadores jugadores, tCasillas fila1, tCasillas fila2) {
 		cout << ">>>>>>>>>>>";
 	}
 	cout << "\n";
-	
+
 	// ----------------------------------------------------------------------------------
 	// --- Subidas a meta ---------------------------------------------------------------
 	// ----------------------------------------------------------------------------------
 	// 
 	// --- + Casas ----------------------------------------------------------------------
-	int cont = 101, tmp=0;
-	for (i = 0; i < 4; i++) {
-		for (j = 0; j < 4; j++) {
+	int cont = 101, tmp = 0;
+	for (i = 0; i < JUGADORES; i++) {
+		for (j = 0; j < JUGADORES; j++) {
 			setColor(j);
 			print = "VV   ^           ";
-			if (jugadores[i][j] == -1) print[5] = 49 + i;
-			
-			for (k = 0; k < 4; k++) {				
-				if (jugadores[k][j] == cont) {
+			if (jugadores[j][i] == -1) print[5] = 49 + i;
+
+			for (k = 0; k < JUGADORES; k++) {
+				if (jugadores[j][k] == cont) {
 					print[tmp++] = 49 + k + 1;
 				}
 			}
-			
+
 			cout << print;
 		}
 		cout << "\n";
 		cont++;
 	}
-	
+
 	// --- sin Casas --------------------------------------------------------------------
 	for (i = 0; i < 3; i++) {
-		for (j = 0; j < 4; j++) {
+		for (j = 0; j < JUGADORES; j++) {
 			setColor(j);
 			print = "VV               ";
-			for (k = 0; k < 4; k++) {
-				if (jugadores[k][j] == cont) {
+			for (k = 0; k < JUGADORES; k++) {
+				if (jugadores[j][k] == cont) {
 					print[tmp++] = 49 + k + 1;
 				}
 			}
@@ -261,13 +276,13 @@ void imprimeTablero(tJugadores jugadores, tCasillas fila1, tCasillas fila2) {
 	// ----------------------------------------------------------------------------------
 	// --- Metas ------------------------------------------------------------------------
 	// ----------------------------------------------------------------------------------
-	
+
 	for (i = 0; i < 2; i++) {
-		for (j = 0; j < 4; j++) {
+		for (j = 0; j < JUGADORES; j++) {
 			setColor(j);
-			print = "..               ";			
-			if (jugadores[(2 * i)][j] == 108) print[0] = 49 + (2 * i);
-			if (jugadores[(2 * i + 1)][j] == 108) print[1] = 49 + (2 * i + 1);
+			print = "..               ";
+			if (jugadores[j][(2 * i)] == 108) print[0] = 49 + (2 * i);
+			if (jugadores[j][(2 * i + 1)] == 108) print[1] = 49 + (2 * i + 1);
 
 			cout << print;
 		}
@@ -277,14 +292,14 @@ void imprimeTablero(tJugadores jugadores, tCasillas fila1, tCasillas fila2) {
 
 	// reinicia el color
 	setColor(4);
-
+	cout << "\n";
 
 
 	/* Codigo para otra funcion
 	cout << "\n";
 	cout << "Turno para el jugador " << colorACadena(intAColor(jugador)) << "... Sale un " << dado << "\n";
 	cout << "Por favor, elige la ficha que quieres mover...\n";
-	for (int i = 0; i < 4; i++) { // TODO cambiar a las fichas del jugador en el tablero
+	for (int i = 0; i < JUGADORES; i++) { // TODO cambiar a las fichas del jugador en el tablero
 		if (jugadores[jugador][i] == -1) continue;
 
 		cout << i << ": De la casilla " << jugadores[jugador][i] << " a la casilla " << jugadores[jugador][i] + dado << "\n";
@@ -296,42 +311,131 @@ void imprimeTablero(tJugadores jugadores, tCasillas fila1, tCasillas fila2) {
 
 int main() {
 
-	tCasillas fila1, fila2;
+	tCasillas calle1, calle2;
 	tJugadores jugadores;
+	tColor jugadorTurno;
+	int jugador = 1;
+
+	bool fin = false;
+	int tirada = -1;;
+	int premio = 0;
+	int seises = 0;
+	int ultimaFichaMovida = -1;
+
+
 	int cont6;
-	int ultFicha;
-	int jugador;
-	int dado;
 
-	
-	// init filas
-	for (int i = 0; i < 68; i++) {
-		fila1[i] = Ninguno;
-		fila2[i] = Ninguno;
-	}
 
-	// init jugadores
-	for (int i = 0; i < 4; i++) {
-		for (int j = 0; j < 4; j++) {
-			jugadores[i][j] = -1;
+
+
+
+	bool pasaTurno = true;
+	bool juega = false;
+
+
+	iniciar(jugadores, calle1, calle2, jugadorTurno);
+
+	jugadorTurno = intAColor(1);
+
+
+	while (!fin) {
+		imprimeTablero(jugadores, calle1, calle2);
+
+		cin >> tirada;
+
+
+
+		if (tirada == 6) {
+			juega = procesa6(jugadores, jugadorTurno, premio, pasaTurno,
+				seises, ultimaFichaMovida, tirada, calle1, calle2);
 		}
+		else {
+			pasaTurno = true;
+
+			seises = 0;
+			if (tirada == 5) {
+				juega = procesa5(jugadores, jugadorTurno, premio, pasaTurno,
+					calle1, calle2);
+				if (juega) {
+					setColor(jugadorTurno);
+					cout << "Sale una ficha de casa\n";
+					setColor(4);
+				}
+			}
+		}
+
+
+
+
+
+		if (!juega) {
+			jugar(jugadores, jugadorTurno, premio, fin, seises, ultimaFichaMovida, tirada, calle1, calle2);
+		}
+
+		while (premio != 0) {
+			imprimeTablero(jugadores, calle1, calle2);
+			jugar(jugadores, jugadorTurno, premio, fin, seises, ultimaFichaMovida, premio, calle1, calle2);
+		}
+
+		if (pasaTurno) {
+			jugador = (jugador + 1) % JUGADORES;
+			jugadorTurno = intAColor(jugador);
+		}
+
+		juega = false;
 	}
 
-	//fila1[67] = Rojo;
-	jugadores[1][2] = 107;
+	/*
 
-	//fila2[67] = Rojo;
-	jugadores[0][2] = 108;
-	jugadores[2][2] = 108;
-	jugadores[3][2] = 108;
+	/*fila1[67] = Rojo;
+	jugadores[1][2] = 67;
 
-	imprimeTablero(jugadores, fila1, fila2);
+	fila2[67] = Rojo;
+	jugadores[0][2] = 67;//*
+
+	jugadores[2][3] = 108;
+	//jugadores[3][2] = 108;
+
+	calle1[0] = Azul;
+	jugadores[1][0] = 0;
+
+	calle1[29] = Verde;
+	jugadores[3][0] = 29;
+	/*calle2[29] = Rojo;
+	jugadores[2][1] = 29;//*
+
+
+	calle1[22] = Amarillo;
+	jugadores[0][2] = 22;
+
+
+
+
+
+
+
+	procesa5(jugadores, jugadorTurno, premio, pasaTurno, calle1, calle2);
+	imprimeTablero(jugadores, calle1, calle2);
+	procesa5(jugadores, jugadorTurno, premio, pasaTurno, calle1, calle2);
+	//procesa5(jugadores, jugadorTurno, premio, pasaTurno, calle1, calle2);
+
+	imprimeTablero(jugadores, calle1, calle2);
+
+	int ficha = 2;
+	int casilla = 0;
+	int tirada = 7;
+	if (puedeMover(jugadores, jugadorTurno, ficha, casilla, tirada, calle1, calle2)) {
+		mover(jugadores, jugadorTurno, ficha, casilla, premio, ultimaFichaMovida, calle1, calle2);
+	}
+
+	imprimeTablero(jugadores, calle1, calle2);
+	*/
 
 	return 0;
 }
 
 
-/*
+/**
 * Precondicion: casilla puede ser cualquier entero.
 *
 * Devuelve un booleano:
@@ -340,10 +444,11 @@ int main() {
 */
 bool esSeguro(int casilla) {
 	return casilla == 0 || casilla == 12 || casilla == 17 || casilla == 29 ||
-		casilla == 34 || casilla == 46 || casilla == 51 || casilla == 63;
+		casilla == 34 || casilla == 46 || casilla == 51 || casilla == 63 ||
+		casilla == 5 || casilla == 22 || casilla == 39 || casilla == 56;
 }
 
-/*
+/**
 * Precondicion: jugador tiene que estar en el intervalo [0-3].
 *
 * Devuelve un entero:
@@ -361,7 +466,7 @@ int salidaJugador(int jugador) {
 	return ret;
 }
 
-/*
+/**
 * Precondicion: jugador tiene que estar en el intervalo [0-3].
 *
 * Devuelve un entero:
@@ -379,7 +484,7 @@ int zanataJugador(int jugador) {
 	return ret;
 }
 
-/*
+/**
 * Precondicion: color puede ser cualquier tColor.
 *
 * Traduce tColor a string
@@ -396,7 +501,7 @@ string colorACadena(tColor color) {
 	return ret;
 }
 
-/*
+/**
 * Precondicion: color puede ser cualquier tColor.
 *
 * Traduce tColor a char
@@ -413,8 +518,8 @@ char colorALetra(tColor color) {
 	return ret;
 }
 
-/*TODO
-* Inicializa el generador de numeros aleatorios, con srand() y los elementos del juego 8ficha y tablero)
+/**
+* Inicializa el generador de numeros aleatorios, con srand() y los elementos del juego (ficha y tablero)
 * Tambien pone el color de la fuente en gris sobre fondo blanco.
 *
 * Devuelve el jugador que empieza a jugar (aleatorio de [0,3])
@@ -422,38 +527,69 @@ char colorALetra(tColor color) {
 void iniciar(tJugadores jugadores, tCasillas calle1, tCasillas calle2,
 	tColor& jugadorTurno) {
 
+	int i = 0;
+
+	srand(static_cast<unsigned>(time(0)));
+	setColor(4);
+	jugadorTurno = intAColor(rand() % JUGADORES + 1);
+
+	// init filas
+	for (; i < CASILLASP; i++) {
+		calle1[i] = Ninguno;
+		calle2[i] = Ninguno;
+	}
+
+
+
+	// init jugadores
+	for (i = 0; i < JUGADORES; i++) {
+		for (int j = 0; j < JUGADORES; j++) {
+			jugadores[i][j] = -1;
+		}
+	}
 
 
 }
 
 
-/*TODO
-* Precondicion: casilla tiene que ser un entero [0,67]
+/**
+* Precondicion: casilla tiene que ser un entero [0,67] U [101,107]
 *
 * Devuelve un booleano:
-*	true: si en la casilla hay dos fichas de mismo color,
-*	false: en caso contrario
+*	true: si en la casilla hay dos fichas de mismo color.
+*	false: en caso contrario.
 */
 bool puente(const tCasillas calle1, const tCasillas calle2, int casilla) {
-	if (casilla < 0 || casilla>67) { num_error = CEINT; return false; }
+	if (casilla < 0 || casilla > 107 || (casilla > 67 && casilla < 101)) { num_error = CEINT; return false; }
 
-	return false;
+	bool ret = false;
+
+	if (calle2[casilla] != Ninguno && calle1[casilla] == calle2[casilla]) ret = true;
+
+	return ret;
 }
 
-/*TODO
-* Precondicion: la casilla tiene que ser un entero con valor [1] U [0,67] U [101, 108]
+/**
+* Precondicion: la casilla tiene que ser un entero con valor [-1,67] U [101, 108]
 *
 * Devuelve un entero. El numero de fichas de un jugador en una casilla
 */
 int cuantasEn(const tFichas jugador, int casilla) {
-	if (casilla < 0 || casilla > 108 || (casilla > 67 && casilla < 101)) { num_error = CEINT; return -1; }
+	if (casilla < -1 || casilla > 108 || (casilla > 67 && casilla < 101)) { num_error = CEINT; return -1; }
 
+	int ret = 0;
+	int i = 0;
+
+	for (; i < JUGADORES; i++) {
+		if (jugador[i] == casilla) ret++;
+	}
 
 
 	return 0;
 }
 
-/*TODO
+/**
+* Precondicion: la casilla tiene que ser un entero con valor [-1,67] U [101, 108]
 *
 * Menor indice de ficha del jugador que esta en esa casilla.
 * Se usa para sacar de casa una ficha.
@@ -463,12 +599,21 @@ int cuantasEn(const tFichas jugador, int casilla) {
 *	[0,3]: el indicde de la ficha
 */
 int primeraEn(const tFichas jugador, int casilla) {
+	if (casilla < -1 || casilla > 108 || (casilla > 67 && casilla < 101)) { num_error = CEINT; return -1; }
+
+	int i = 0;
+	bool fin = false;
+
+	while (i < JUGADORES && !fin) {
+		if (jugador[i] == casilla) fin = true;
+		i++;
+	}
 
 
-	return 0;
+	return i - 1;
 }
 
-/*TODO
+/**
 *
 * Mayor indice de ficha del jugador que esta en esa casilla
 * Se usa para determinar que ficha se va a casa (aCasita)
@@ -480,38 +625,71 @@ int primeraEn(const tFichas jugador, int casilla) {
 * Mayor	índice	de	ficha	del
 */
 int segundaEn(const tFichas jugador, int casilla) {
+	if (casilla < -1 || casilla > 108 || (casilla > 67 && casilla < 101)) { num_error = CEINT; return -1; }
+
+	int i = 3;
+	bool fin = false;
+
+	while (i >= 0 && !fin) {
+		if (jugador[i] == casilla) fin = true;
+		i--;
+	}
 
 
-	return 0;
+	return i + 1;
 }
 
-/*TODO
+/**
 *
 * Sale de casa una ficha del jugador, concretamente la de menor indice que este en casa.
-* La que sale va a la calle 1 y si hubiera otra se colaca en la calle 2.
+* La que sale va a la calle 1 y si hubiera otra se coloca en la calle 2.
 */
 void saleFicha(tJugadores jugadores, tColor jugadorTurno, tCasillas calle1, tCasillas calle2) {
+	int indice, salida;
 
+	indice = primeraEn(jugadores[jugadorTurno], -1);
+	salida = salidaJugador(jugadorTurno);
+
+	jugadores[jugadorTurno][indice] = salida;
+
+	if (calle1[salida] != Ninguno) calle2[salida] = calle1[salida];// calle1[salida];
+	calle1[salida] = jugadorTurno;
 }
 
-/*TODO
+/**
 *
 * Manda a casa la ultima ficha que llego a la casilla, la que esta en la calle2
 */
 void aCasita(tJugadores jugadores, int casilla, tCasillas calle1, tCasillas calle2) {
+	if (calle2[casilla] == Ninguno) { num_error = MCE; return; }
+	if (casilla < -1 || casilla > 108 || (casilla > 67 && casilla < 101)) { num_error = CEINT; return; }
 
+	int indice;
+	int i = 0;
+
+	for (; i < JUGADORES; i++) {
+		if (jugadores[calle2[casilla]][i] == casilla) indice = i;
+	}
+
+	jugadores[calle2[casilla]][indice] = -1;
+	calle2[casilla] = Ninguno;
 }
 
-/*TODO
+/**
 *
 * Devuele un booleano:
 *	true: si todas las fichas del jugador estan en la meta (casilla 108)
 *	false: en caso contrario
 */
 bool todasEnMeta(const tFichas jugador) {
+	int cont = 0;
+	int i = 0;
 
+	for (; i < JUGADORES; i++) {
+		if (jugador[i] == 108) cont++;
+	}
 
-	return false;
+	return cont == JUGADORES;
 }
 
 
@@ -533,7 +711,7 @@ void abrirPuente(tJugadores jugadores, int casilla, int casilla2, int& premio,
 
 }
 
-/*TODO
+/**
 *
 * Intenta sacar una ficha de casa del jugador, si queda alguna.
 * Si ya hay dos fichas en la casilla de salida, entonces si ambas son suyas no sale de casa.
@@ -548,6 +726,8 @@ void abrirPuente(tJugadores jugadores, int casilla, int casilla2, int& premio,
 bool procesa5(tJugadores jugadores, tColor jugadorTurno, int& premio,
 	bool& pasaTurno, tCasillas calle1, tCasillas calle2) {
 
+	
+
 	return false;
 }
 
@@ -556,6 +736,7 @@ bool procesa5(tJugadores jugadores, tColor jugadorTurno, int& premio,
 * Actualiza la tirada a 7 si no quedan fichas en casa y gestiona los dos casos especiales (dado=6).
 * manda ultimaFichaMovida a casa si es el tercer seis consecutivo, o abre obligatoriamente un puente
 * que tenga el jugador (si tiene dos, el usuario ha de decidir cual).
+*
 * El jugador mantiene turno si no es su tercer seis consecutivo.
 * Si no hay movimiento obligatorio, el movimiento no se lleva a cabo en esta funcion, al igual que en
 * procesa5() pues es responsabilidad de jugar(), no sera invocada desde aqui.
@@ -568,9 +749,10 @@ bool procesa5(tJugadores jugadores, tColor jugadorTurno, int& premio,
 bool procesa6(tJugadores jugadores, tColor jugadorTurno, int& premio,
 	bool& pasaTurno, int& seises, int& ultimaFichaMovida, int& tirada,
 	tCasillas calle1, tCasillas calle2) {
+	setColor(jugadorTurno);
 
 
-
+	
 	return false;
 }
 
@@ -578,6 +760,7 @@ bool procesa6(tJugadores jugadores, tColor jugadorTurno, int& premio,
 *
 * Esta funcion se invocara cuando no haya salida una ficha de casa con 5, no se
 * haya ido una ficha a casa con 6, ni haya habido que abrir un puente.
+*
 * La funcion preguntara al usuario que ficha quiere mover "tirada" movimientos,
 * de entre las fichas que se puedan mover. Entonces se llevara a cabo el movimiento
 * de dicha ficha invocando la funcion mover(). Ademas, se actualizara la ultimaFichaMovida.
@@ -592,11 +775,14 @@ bool jugar(tJugadores jugadores, tColor jugadorTurno, int& premio, bool&
 	fin, int& seises, int& ultimaFichaMovida, int tirada, tCasillas calle1,
 	tCasillas calle2) {
 
+	
 
 	return false;
 }
 
-/*TODO
+/**
+*
+* Precondicion: ficha es un entero en el intervalo [0,3]
 *
 * Indica la casilla a la que puede ir la ficha del jugador con esa tirada.
 *
@@ -607,22 +793,21 @@ bool jugar(tJugadores jugadores, tColor jugadorTurno, int& premio, bool&
 bool puedeMover(const tJugadores jugadores, tColor jugadorTurno, int
 	ficha, int& casilla, int tirada, const tCasillas calle1, const tCasillas
 	calle2) {
+	
 
-	
-	
 	return false;
 }
 
-/*TODO
+/**
+*
+* Precondicion: ficha es un entero en el intervalo [0,3]
 *
 * Ejecuta el movimiento de la ficha, se usa depues de haber usado puedoMover().
 */
 void mover(tJugadores jugadores, tColor jugadorTurno, int ficha, int
 	casilla, int& premio, int& ultimaFichaMovida, tCasillas calle1,
 	tCasillas calle2) {
-
-
-
+	
 }
 
 // -----------------------------------------------------------------------------------------------------
