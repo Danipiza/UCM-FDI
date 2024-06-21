@@ -1,3 +1,7 @@
 ﻿  main.cpp
-C:\Users\Usuario\Desktop\GITHUB\UCM\1ro\1er_cuatrimestre\FP1\Practica\Practica\main.cpp(326,6): warning C4101: 'cont6': variable local sin referencia
+C:\Users\Usuario\Desktop\GITHUB\UCM\1ro\1er_cuatrimestre\FP1\Practica\Practica\main.cpp(899,7): warning C4101: 'a': variable local sin referencia
+C:\Users\Usuario\Desktop\GITHUB\UCM\1ro\1er_cuatrimestre\FP1\Practica\Practica\main.cpp(876,11): warning C4101: 'zanata': variable local sin referencia
+C:\Users\Usuario\Desktop\GITHUB\UCM\1ro\1er_cuatrimestre\FP1\Practica\Practica\main.cpp(876,6): warning C4101: 'pos': variable local sin referencia
+C:\Users\Usuario\Desktop\GITHUB\UCM\1ro\1er_cuatrimestre\FP1\Practica\Practica\main.cpp(899,10): warning C4101: 'b': variable local sin referencia
+C:\Users\Usuario\Desktop\GITHUB\UCM\1ro\1er_cuatrimestre\FP1\Practica\Practica\main.cpp(899,13): warning C4101: 'c': variable local sin referencia
   Practica.vcxproj -> C:\Users\Usuario\Desktop\GITHUB\UCM\1ro\1er_cuatrimestre\FP1\Practica\x64\Debug\Practica.exe

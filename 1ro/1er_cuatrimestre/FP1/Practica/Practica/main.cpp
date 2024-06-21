@@ -20,8 +20,7 @@ const unordered_map<int, string> errorMessages = {
 	{JIEINT, "Error: Indice de jugador fuera de intervalo"},
 	{CEINT, "Error: Casilla fuera de intervalo"},
 	{MCE, "Error: No hay ficha para mandar a casa"},
-	{FIEINT, "Error: Indice de ficha fuera de intervalo"},
-
+	{FIEINT, "Error: Indice de ficha fuera de intervalo"}
 };
 
 #define CASILLASP 68
@@ -238,15 +237,16 @@ void imprimeTablero(tJugadores jugadores, tCasillas fila1, tCasillas fila2) {
 	// 
 	// --- + Casas ----------------------------------------------------------------------
 	int cont = 101, tmp = 0;
-	for (i = 0; i < JUGADORES; i++) {
+	for (i = 0; i < 4; i++) {
+		tmp = 0;
 		for (j = 0; j < JUGADORES; j++) {
 			setColor(j);
 			print = "VV   ^           ";
 			if (jugadores[j][i] == -1) print[5] = 49 + i;
 
-			for (k = 0; k < JUGADORES; k++) {
+			for (k = 0; k < FICHAS; k++) {
 				if (jugadores[j][k] == cont) {
-					print[tmp++] = 49 + k + 1;
+					print[tmp++] = 49 + k;
 				}
 			}
 
@@ -258,12 +258,13 @@ void imprimeTablero(tJugadores jugadores, tCasillas fila1, tCasillas fila2) {
 
 	// --- sin Casas --------------------------------------------------------------------
 	for (i = 0; i < 3; i++) {
+		tmp = 0;
 		for (j = 0; j < JUGADORES; j++) {
 			setColor(j);
 			print = "VV               ";
 			for (k = 0; k < JUGADORES; k++) {
 				if (jugadores[j][k] == cont) {
-					print[tmp++] = 49 + k + 1;
+					print[tmp++] = 49 + k;
 				}
 			}
 
@@ -293,40 +294,21 @@ void imprimeTablero(tJugadores jugadores, tCasillas fila1, tCasillas fila2) {
 	// reinicia el color
 	setColor(4);
 	cout << "\n";
-
-
-	/* Codigo para otra funcion
-	cout << "\n";
-	cout << "Turno para el jugador " << colorACadena(intAColor(jugador)) << "... Sale un " << dado << "\n";
-	cout << "Por favor, elige la ficha que quieres mover...\n";
-	for (int i = 0; i < JUGADORES; i++) { // TODO cambiar a las fichas del jugador en el tablero
-		if (jugadores[jugador][i] == -1) continue;
-
-		cout << i << ": De la casilla " << jugadores[jugador][i] << " a la casilla " << jugadores[jugador][i] + dado << "\n";
-	}
-	cout << "Ficha (0 para salir)\n";*/
 }
 
 
 
 int main() {
-
 	tCasillas calle1, calle2;
 	tJugadores jugadores;
 	tColor jugadorTurno;
 	int jugador = 1;
 
 	bool fin = false;
-	int tirada = -1;;
+	int tirada = -1;
 	int premio = 0;
 	int seises = 0;
 	int ultimaFichaMovida = -1;
-
-
-	int cont6;
-
-
-
 
 
 	bool pasaTurno = true;
@@ -334,15 +316,13 @@ int main() {
 
 
 	iniciar(jugadores, calle1, calle2, jugadorTurno);
-
 	jugadorTurno = intAColor(1);
-
 
 	while (!fin) {
 		imprimeTablero(jugadores, calle1, calle2);
 
 		cin >> tirada;
-
+		//tirada = (rand() % 6) + 1;
 
 
 		if (tirada == 6) {
@@ -351,8 +331,8 @@ int main() {
 		}
 		else {
 			pasaTurno = true;
-
 			seises = 0;
+
 			if (tirada == 5) {
 				juega = procesa5(jugadores, jugadorTurno, premio, pasaTurno,
 					calle1, calle2);
@@ -363,9 +343,6 @@ int main() {
 				}
 			}
 		}
-
-
-
 
 
 		if (!juega) {
@@ -384,6 +361,27 @@ int main() {
 
 		juega = false;
 	}
+
+	int ganador = -1;
+	for (int i = 0; i < JUGADORES; i++) {
+		if (cuantasEn(jugadores[i], 108) == 4) ganador = i;
+	}
+	setColor(ganador);
+	cout << "Fin de la partida. Gana " << colorACadena(intAColor(ganador)) << ".\n";
+	setColor(4);
+
+	/*imprimeTablero(jugadores, calle1, calle2);
+
+	jugadores[0][0] = 101;
+	jugadores[0][1] = 103;
+	jugadores[0][2] = 103;
+	jugadores[0][3] = 104;
+
+	imprimeTablero(jugadores, calle1, calle2);
+	int casilla = 101;
+	if (puedeMover(jugadores, jugadorTurno, 0, casilla, tirada, calle1, calle2))
+		mover(jugadores, jugadorTurno, 0, 103, premio, ultimaFichaMovida, calle1, calle2);
+	imprimeTablero(jugadores, calle1, calle2);*/
 
 	/*
 
@@ -585,7 +583,7 @@ int cuantasEn(const tFichas jugador, int casilla) {
 	}
 
 
-	return 0;
+	return ret;
 }
 
 /**
@@ -698,7 +696,8 @@ bool todasEnMeta(const tFichas jugador) {
 // -----------------------------------------------------------------------------------------------------
 
 
-/*TODO
+/* NO IMPLEMENTADA, PORQUE EN LA PRACTICA SOLO ABRIA PUENTE CON 2 FICHAS DEL MISMO COLOR
+* PERO LO HE IMPLEMENTADO PARA QUE ABRA CUALQUIER PUENTE SI SALE UN 6
 *
 * Abre el puente del jugador en casilla, llevando la ficha con mayor indice en el puente a la casilla 2
 * y ganando el premio si se come otra ficha. El movimiento en si se realiza invocando desde aqui la
@@ -706,10 +705,7 @@ bool todasEnMeta(const tFichas jugador) {
 */
 void abrirPuente(tJugadores jugadores, int casilla, int casilla2, int& premio,
 	tColor jugadorTurno, int& ultimaFichaMovida, tCasillas calle1,
-	tCasillas calle2) {
-
-
-}
+	tCasillas calle2) {}
 
 /**
 *
@@ -726,9 +722,49 @@ void abrirPuente(tJugadores jugadores, int casilla, int casilla2, int& premio,
 bool procesa5(tJugadores jugadores, tColor jugadorTurno, int& premio,
 	bool& pasaTurno, tCasillas calle1, tCasillas calle2) {
 
-	
+	bool ret = true;
+	int salida, indice, indiceS;
+	int i;
+	premio = 0;
+	pasaTurno = true;
 
-	return false;
+	salida = salidaJugador(jugadorTurno);
+	indiceS = primeraEn(jugadores[jugadorTurno], -1);
+
+	// cero/una ficha
+	if (calle2[salida] == Ninguno) saleFicha(jugadores, jugadorTurno, calle1, calle2);
+	else { // dos fichas
+
+
+		if (calle1[salida] == jugadorTurno &&
+			calle1[salida] == calle2[salida]) { // suyas = no sale
+			ret = false;
+		}
+		else { // 1 distinta = se la come
+			if (calle2[salida] == jugadorTurno) { // calle1 de distinto color del jugador que sale
+				for (i = 0; i < JUGADORES; i++) {
+					if (jugadores[calle1[salida]][i] == salida) indice = i;
+				}
+				jugadores[calle1[salida]][indice] = -1;		// a casa. valor del jugador que se va
+				calle1[salida] = jugadorTurno;				// cambio de color
+				jugadores[jugadorTurno][indiceS] = salida;	// sale de casa. valor del jugador que sale
+			}
+			else { // calle 1 del color del jugador que sale o dos colores distintos
+				for (i = 0; i < JUGADORES; i++) {
+					if (jugadores[calle2[salida]][i] == salida) indice = i;
+				}
+				jugadores[calle2[salida]][indice] = -1;		// a casa. valor del jugador que se va
+				calle2[salida] = jugadorTurno;				// cambio de color
+				jugadores[jugadorTurno][indiceS] = salida;	// sale de casa. valor del jugador que sale
+			}
+			premio = 20;
+
+		}
+
+	}
+
+
+	return ret;
 }
 
 /*TODO
@@ -752,8 +788,68 @@ bool procesa6(tJugadores jugadores, tColor jugadorTurno, int& premio,
 	setColor(jugadorTurno);
 
 
-	
-	return false;
+	bool ret = false;
+	int i = 0; // iterador
+	// variables de abrir puente
+	int puentes[FICHAS] = { -1,-1,-1,-1 };
+	int pos, cont = 0, ficha;
+
+	pasaTurno = false;
+
+	// actualiza
+	if (cuantasEn(jugadores[jugadorTurno], -1) == 0) {
+		cout << "Todas las fichas fuera de casa. tirada=7\n";
+		tirada++;
+	}
+
+	for (; i < FICHAS; i++) {
+		pos = jugadores[jugadorTurno][i];
+		if ((pos > -1 && pos < 68) && pos != -1 && calle2[pos] != Ninguno) {
+			cont++;
+			puentes[i] = pos;
+		}
+	}
+
+	// casos especiales
+	if (seises == 2) {
+		int num = cuantasEn(jugadores[jugadorTurno], -1);
+		if (num != 4) {
+			cout << "Tercer seis consecutivo. Ultima ficha movida (" << ultimaFichaMovida + 1 << ") a casa.\n";
+			pos = jugadores[jugadorTurno][ultimaFichaMovida];
+
+			if (calle2[pos] == jugadorTurno) calle2[pos] = Ninguno;
+			else calle1[pos] = Ninguno;
+			// manda a casa
+			jugadores[jugadorTurno][ultimaFichaMovida] = -1;
+		}
+		else cout << "Tercer seis consecuitivo. Ninguna ficha fuera de casa, solo pierde el turno.\n";
+
+		pasaTurno = true;
+		ret = true;
+	}
+	else if (cont > 0) {
+		cout << "Abrir puente:\n";
+		for (i = 0; i < FICHAS; i++) {
+			if (puentes[i] != -1) {
+				cout << i + 1 << ": De la casilla " << puentes[i] << " a la casilla " << puentes[i] + tirada << "\n";
+			}
+		}
+		cout << "Ficha (0 para salir):";
+		do {
+			cin >> ficha;
+		} while (ficha < 0 && ficha > 4 && puentes[ficha - 1] != -1);
+
+
+		mover(jugadores, jugadorTurno, ficha - 1, jugadores[jugadorTurno][ficha - 1] + tirada, premio, ultimaFichaMovida, calle1, calle2);
+		cout << "\n";
+		ret = true;
+	}
+
+	seises++;
+
+
+	setColor(4);
+	return ret;
 }
 
 /*TODO
@@ -775,7 +871,53 @@ bool jugar(tJugadores jugadores, tColor jugadorTurno, int& premio, bool&
 	fin, int& seises, int& ultimaFichaMovida, int tirada, tCasillas calle1,
 	tCasillas calle2) {
 
-	
+	int disponibles[FICHAS] = { -1, -1, -1, -1 };
+	int casilla, ficha, cont = 0;
+	int pos, zanata;
+	int i = 0;
+
+
+
+	setColor(jugadorTurno);
+	if (premio == 0) cout << "Turno para el jugador " << colorACadena(jugadorTurno) << "... Sale un " << tirada << "\n";
+	else if (premio == 20) cout << "Se ha comido una ficha. Premio = 20\n";
+	else cout << "Una ficha ha llegado a la meta. Premio = 10\n";
+	cout << "Por favor, elige la ficha que quieres mover...\n";
+
+	premio = 0;
+
+	for (; i < FICHAS; i++) {
+		if (puedeMover(jugadores, jugadorTurno, i, casilla, tirada, calle1, calle2)) {
+			cout << i + 1 << ": De la casilla " << jugadores[jugadorTurno][i] << " a la casilla " << casilla << "\n";
+			disponibles[i] = casilla;
+			cont++;
+		}
+	}
+	if (cont == 0) cout << "Ninguna ficha se puede mover. Introduce 0 para terminar el juego: ";
+	else cout << "Ficha (0 para salir): ";
+
+	bool a, b, c;
+	do {
+		cin >> ficha;
+	} while (ficha < 0 || ficha > 4 || (disponibles[ficha - 1] == -1));
+
+	if (ficha == 0) fin = true;
+	else if (disponibles[ficha - 1] != -1) {
+		/*pos = jugadores[jugadorTurno][ficha - 1];
+		zanata = zanataJugador(jugadorTurno);
+		if (pos < zanata && (pos + tirada) > zanata) {
+			casilla = 101 - (zanata - pos - tirada + 1);
+		}
+		else casilla = (pos + tirada) % CASILLASP;*/
+		mover(jugadores, jugadorTurno, ficha - 1, disponibles[ficha - 1],
+			premio, ultimaFichaMovida, calle1, calle2);
+		ultimaFichaMovida = ficha - 1;
+	}
+
+	if (cuantasEn(jugadores[jugadorTurno], 108) == 4) fin = true;
+
+	cout << "\n";
+	setColor(4);
 
 	return false;
 }
@@ -793,9 +935,51 @@ bool jugar(tJugadores jugadores, tColor jugadorTurno, int& premio, bool&
 bool puedeMover(const tJugadores jugadores, tColor jugadorTurno, int
 	ficha, int& casilla, int tirada, const tCasillas calle1, const tCasillas
 	calle2) {
-	
+	if (ficha < 0 || ficha > 3) { num_error = FIEINT; return false; }
 
-	return false;
+	bool ret = false, fin;
+
+	if (jugadores[jugadorTurno][ficha] != 108) {
+		int i = 0;
+		ret = true;
+		int zanata;
+
+		casilla = jugadores[jugadorTurno][ficha];
+		zanata = zanataJugador(jugadorTurno);
+		if (casilla == zanata) {
+			i++;
+			casilla = 101;
+		}
+		fin = (casilla >= 101);
+
+		if (casilla == -1) ret = false;
+
+		for (; i < tirada && ret && !fin; i++) {
+			if (casilla != zanata) {
+				casilla++;
+				casilla %= CASILLASP;
+
+				if (calle1[casilla] != Ninguno && calle1[casilla] == calle2[casilla]) ret = false;
+			}
+			else {
+				fin = true; // ha llegado a la zanata		
+				if (i < tirada) {
+					casilla = 101;
+				}
+			}
+		}
+
+		if (fin) {
+			for (; i < tirada && ret && fin; i++) {
+				casilla++;
+
+				if (casilla == 109) fin = false;
+				if (casilla != 108 && cuantasEn(jugadores[jugadorTurno], casilla) == 2) ret = false;
+			}
+			ret = (i == tirada) && fin;
+		}
+	}
+	return ret;
 }
 
 /**
@@ -807,7 +991,53 @@ bool puedeMover(const tJugadores jugadores, tColor jugadorTurno, int
 void mover(tJugadores jugadores, tColor jugadorTurno, int ficha, int
 	casilla, int& premio, int& ultimaFichaMovida, tCasillas calle1,
 	tCasillas calle2) {
-	
+	if (ficha < 0 || ficha >3) { num_error = FIEINT; return; }
+
+	int i;
+	int pos;
+	int colorComido, fichaComida = -1;
+
+	premio = 0;
+	ultimaFichaMovida = ficha;
+
+	pos = jugadores[jugadorTurno][ficha];
+	// elimina el color de la posicion anterior
+	if (calle2[pos] == jugadorTurno) calle2[pos] = Ninguno;
+	else {
+		calle1[pos] = calle2[pos];
+		calle2[pos] = Ninguno;
+	}
+
+	// mueve la ficha a la nueva casilla
+	pos = casilla;
+	jugadores[jugadorTurno][ficha] = casilla;
+	if (casilla < 101) {
+		if (calle1[casilla] != Ninguno) { // en la casilla hay una ficha
+		// es un seguro, se situa en la calle2
+			if (esSeguro(casilla)) calle2[casilla] = jugadorTurno;
+			else { // no es un seguro, se come la ficha
+				if (calle1[casilla] != jugadorTurno) {
+					premio = 20;
+
+					colorComido = calle1[casilla];
+					for (i = 0; i < FICHAS; i++) {
+						if (jugadores[colorComido][i] == casilla) fichaComida = i;
+					}
+					jugadores[colorComido][fichaComida] = -1;
+
+					calle1[casilla] = jugadorTurno;
+				}
+				else {
+					calle2[casilla] = jugadorTurno;
+				}
+			}
+		}
+		else calle1[casilla] = jugadorTurno; // esta vacia
+	}
+	else {
+		if (casilla == 108) premio = 10;
+	}
+
 }
 
 // -----------------------------------------------------------------------------------------------------
