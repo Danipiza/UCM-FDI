@@ -1,0 +1,5 @@
+Exámen teórico	= 3,11/5
+Exámen práctico	= 4/4
+Práticas		= 1/1
+
+Total			= 8.11/10
