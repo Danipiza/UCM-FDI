@@ -1,3 +1,15 @@
 [submodule "2do/TP1_&_TP2"]
 	path = 2do/TP1_&_TP2
 	url = https://github.com/danipiza/Traffic_Simulator.git
+[submodule "Optativas/PEV"]
+	path = Optativas/PEV
+	url = https://github.com/danipiza/PEV.git
+[submodule "Optativas/HJA"]
+	path = Optativas/HJA
+	url = https://github.com/danipiza/HJA.git
+[submodule "3ro/PC"]
+	path = 3ro/PC
+	url = https://github.com/danipiza/PC.git
+[submodule "4to/PL"]
+	path = 4to/PL
+	url = https://github.com/danipiza/PL.git
