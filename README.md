@@ -2,6 +2,60 @@
 
 # UCM-FDI
 
+## WEBP
+[1_logo](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/1_logo.md)
+[2_1ro](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/2_1ro.md)
+[3_FP1](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/3_FP1.md)
+[4_practicas](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/4_practicas.md)
+
+## WEBP CON LINKS
+
+<a href="https://github.com/Danipiza/UCM-FDI/tree/main">
+  [1_logo](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/1_logo.webp)
+</a>
+<a href="[https://](https://youtube.com)">
+  [2_1ro](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/2_1ro.webp)
+</a>
+<a href="https://github.com/Danipiza/UCM-FDI/tree/main/1ro/FP1">
+  [3_FP1](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/3_FP1.webp)
+</a>
+<a href="https://youtube.com">
+  [4_practicas](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/4_practicas.webp)
+</a>
+
+
+## SVG 
+[1_logo](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/1_logo.svg)
+[2_1ro](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/2_1ro.svg)
+[3_FP1](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/3_FP1.svg)
+[4_practicas](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/4_practicas.svg)
+
+
+## SVG CON LINKS
+<a href="https://github.com/Danipiza/UCM-FDI/tree/main">
+  [1_logo](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/1_logo.svg)
+</a>
+<a href="https://youtube.com">
+  [2_1ro](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/2_1ro.svg)
+</a>
+<a href="https://github.com/Danipiza/UCM-FDI/tree/main/1ro/FP1">
+  [3_FP1](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/3_FP1.svg)
+</a>
+<a href="https://youtube.com">
+  [4_practicas](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/4_practicas.svg)
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
 ```
 /
 ├── 1ro/
@@ -13,8 +67,10 @@
 │   ├── TP1_&_TP2/
 │   │   ├── Traffic-Simulator-V1/
 │   │   └── Traffic-Simulator-V2/
-│   └── IS2/
-│      └── Just-Travel-It/
+│   ├── IS2/
+│   │   └── Just-Travel-It/
+│	├──	FAL1/ 		   # TODO
+│	└──	ED/  		   # TODO
 │
 ├── 3ro/
 │   ├── PC/
