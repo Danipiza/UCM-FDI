@@ -2,6 +2,7 @@
 
 # UCM-FDI
 
+<!--
 ## WEBP
 [1_logo](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/1_logo.md)
 [2_1ro](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/2_1ro.md)
@@ -44,6 +45,7 @@
 <a href="https://youtube.com">
   [4_practicas](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/4_practicas.svg)
 </a>
+-->
 
 
 
@@ -56,7 +58,7 @@
 
 
 
-```
+```ruby
 /
 ├── 1ro/
 │   ├── FP1/
