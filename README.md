@@ -2,6 +2,8 @@
 
 # UCM-FDI
 
+
+
 <!--
 ## WEBP
 [1_logo](https://github.com/Danipiza/UCM-FDI/blob/main/readme_images/1_logo.md)
@@ -53,10 +55,19 @@
 
 
 
+## GIT 
+Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia, la confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente. 
 
+Las principales ventajs que ofrece son:
+- Colaboración en Equipos
+- Mejor Gestión de Proyectos a Largo Plazo
+- Integración con Herramientas y Plataformas
+- Auditoría y Trazabilidad
+- Popularidad y Estándar en la Industria
 
+[Aquí](https://github.com/Danipiza/UCM-FDI/Otros/GIT) están todas las funcionalidades principales para empezar a trabajar con GitHub, usando Git.
 
-
+## Estructura
 
 ```ruby
 /
@@ -93,14 +104,19 @@
 │   └── PL/
 │       └── Prácticas/
 │
-└── OPTATIVAS/
-    ├── HJA/
-    │   └── Prácticas/
-    ├── PEV/
-    │   └── Prácticas/
-    └── PCOM/
-        ├── Ejercicios/
-        └── Entregable/
+├── OPTATIVAS/
+│   ├── HJA/
+│   │   └── Prácticas/
+│   ├── PEV/
+│   │   └── Prácticas/
+│   └── PCOM/
+│       ├── Ejercicios/
+│       └── Entregable/
+│
+└── Otros/
+	├── GIT/
+	├── LaTeX/
+	└── readme_images
 ```
 
 
