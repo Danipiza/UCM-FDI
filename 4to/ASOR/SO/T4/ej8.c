@@ -17,9 +17,9 @@
 // EJECUTAR: ./ej8 <host> <puerto>
 // ejemplo: ./ej8 :: 8080 
 
-// TERMINAL: nc -u <host> <puerto>
-// ejemplo: nc -u ::1 8080
-// ejemplo: nc -u 127.0.0.1 8080
+// TERMINAL: nc u <host> <puerto>
+// ejemplo: nc u ::1 8080
+// ejemplo: nc u 127.0.0.1 8080
 // ejemplo: ./ej7 127.0.0.1 8080
 
 // TERMINA: cuando el se cierra el servidor con Ctrl + C
