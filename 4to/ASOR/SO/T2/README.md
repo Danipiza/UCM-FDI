@@ -50,7 +50,7 @@ Escribir un programa que, usando open(2), cree un fichero con los permisos rw-r-
 
 Extra: Con el comando stat imprime sus permisos
 
-Código: [ej5.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/T2/ej5.c)
+Código: [ej5.c](https://github.com/Danipiza/UCM/blob/main/4to/ASOR/SO/T2/ej5.c)
 
 #### Ejercicio  06.
 Cuando se crea un fichero, los permisos por defecto se derivan de la máscara de usuario (umask). Usando el comando interno de la shell umask, fijar la máscara de forma que los nuevos ficheros no tengan permiso de escritura para el grupo y no tengan ningún permiso para otros. Comprobar el funcionamiento con touch(1), mkdir(1) y ls(1).
@@ -68,7 +68,7 @@ mkdir ej6Dir  // Crea un directorio con permisos   drwxr-x---, mkdir crea direct
 Modificar el ejercicio 5 para que, antes de crear el fichero, se fije la máscara igual que en el ejercicio 6. Comprobar el resultado con ls(1). Comprobar que la máscara del proceso padre (la shell) no cambia.
 :-----
 
-Código: [ej7.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/T2/ej7.c)
+Código: [ej7.c](https://github.com/Danipiza/UCM/blob/main/4to/ASOR/SO/T2/ej7.c)
 
 #### Ejercicio  08.
 ls(1) puede mostrar el inodo con la opción -i. El resto de información del inodo puede obtenerse usando stat(1). Consultar las opciones del comando y comprobar su funcionamiento.
@@ -83,7 +83,7 @@ ls(1) puede mostrar el inodo con la opción -i. El resto de información del ino
 - La hora en la que se accedió el fichero por última vez. ¿Qué diferencia hay entre st_mtime y st_ctime? 
 
 
-Código: [ej9.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/T2/ej9.c)
+Código: [ej9.c](https://github.com/Danipiza/UCM/blob/main/4to/ASOR/SO/T2/ej9.c)
 
 #### Ejercicio  10.
 | Los enlaces se crean con ln(1): |
@@ -109,19 +109,19 @@ El enlace rigido puede existir sin el original, pero el simbolico no (se convier
 link(2) y symlink(2) crean enlaces rígidos y simbólicos, respectivamente. Escribir un programa que reciba una ruta a un fichero como argumento. Si la ruta es un fichero regular, creará un enlace simbólico y rígido con el mismo nombre terminado en .sym y .hard, respectivamente. Comprobar el resultado con ls(1).
 :-----
 
-Código: [ej11.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/T2/ej11.c)
+Código: [ej11.c](https://github.com/Danipiza/UCM/blob/main/4to/ASOR/SO/T2/ej11.c)
 
 #### Ejercicio  12.
 Escribir un programa que redirija la salida estándar a un fichero cuya ruta se pasa como primer argumento. Probar haciendo que el programa escriba varias cadenas en la salida estándar.
 :-----
 
-Código: [ej12.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/T2/ej12.c)
+Código: [ej12.c](https://github.com/Danipiza/UCM/blob/main/4to/ASOR/SO/T2/ej12.c)
 
 #### Ejercicio  13.
 Modificar el programa anterior para que también redirija la salida estándar de error al fichero. Comprobar el funcionamiento incluyendo varias sentencias que impriman en ambos flujos. 
 :-----
 
-Código: [ej13.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/T2/ej13.c)
+Código: [ej13.c](https://github.com/Danipiza/UCM/blob/main/4to/ASOR/SO/T2/ej13.c)
 
 ¿Hay diferencia si las redirecciones se hacen en diferente orden? ¿Por qué ls > dirlist 2>&1 es diferente a ls 2>&1 > dirlist?
 ```
@@ -153,7 +153,7 @@ El estado y los cerrojos de fichero en uso en el sistema se pueden consultar en 
 - Si no lo consigue, el programa mostrará el error con perror(3) y terminará. 
 
 
-Código: [ej15.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/T2/ej15.c)
+Código: [ej15.c](https://github.com/Danipiza/UCM/blob/main/4to/ASOR/SO/T2/ej15.c)
 
 #### Ejercicio  16 (Opcional).
 flock(1) proporciona funcionalidad de cerrojos antiguos BSD en guiones shell. Consultar la página de manual y el funcionamiento del comando.
@@ -174,4 +174,4 @@ flock(1) proporciona funcionalidad de cerrojos antiguos BSD en guiones shell. Co
 
 
 
-Código: [ej17.c](https://github.com/Danipiza/UCM/blob/main/4to/1er_cuatrimestre/ASOR/SO/T2/ej17.c)
+Código: [ej17.c](https://github.com/Danipiza/UCM/blob/main/4to/ASOR/SO/T2/ej17.c)
